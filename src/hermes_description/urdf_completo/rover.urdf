@@ -1,0 +1,2322 @@
+<robot name="rover" version="1.0">
+  <joint name="AA_up_base_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.75000 0.50000"/>
+    <parent link="main_base_link"/>
+    <child link="AA_up_base_link"/>
+  </joint>
+  <joint name="L_B_center_cone_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.12591"/>
+    <parent link="radio1_b_l_link"/>
+    <child link="L_B_center_cone_link"/>
+    <axis xyz="0.00000 0.00000 -1.00000"/>
+  </joint>
+  <joint name="L_B_center_plane_link_joint" type="fixed">
+    <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 -0.00091"/>
+    <parent link="L_B_center_cone_link"/>
+    <child link="L_B_center_plane_link"/>
+  </joint>
+  <joint name="L_B_radius_--_link_joint" type="fixed">
+    <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 -0.04091"/>
+    <parent link="L_B_center_cone_link"/>
+    <child link="L_B_radius_--_link"/>
+  </joint>
+  <joint name="L_B_radius_/_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 1.57080" xyz="0.00000 0.00000 -0.05091"/>
+    <parent link="L_B_center_cone_link"/>
+    <child link="L_B_radius_/_link"/>
+  </joint>
+  <joint name="L_B_radius_\_link_joint" type="fixed">
+    <origin rpy="-0.00000 0.00000 -0.78540" xyz="0.00000 0.00000 -0.03091"/>
+    <parent link="L_B_center_cone_link"/>
+    <child link="L_B_radius_\_link"/>
+  </joint>
+  <joint name="L_B_radius_|_link_joint" type="fixed">
+    <origin rpy="-0.00000 0.00000 -1.57080" xyz="0.00000 0.00000 -0.05091"/>
+    <parent link="L_B_center_cone_link"/>
+    <child link="L_B_radius_|_link"/>
+  </joint>
+  <joint name="L_B_tire_link_joint" type="fixed">
+    <origin rpy="0.00000 -0.00000 0.00000" xyz="-0.00000 0.00000 -0.10091"/>
+    <parent link="L_B_center_cone_link"/>
+    <child link="L_B_tire_link"/>
+  </joint>
+  <joint name="L_C_center_cone_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.12591"/>
+    <parent link="radio1_c_l_link"/>
+    <child link="L_C_center_cone_link"/>
+    <axis xyz="0.00000 0.00000 -1.00000"/>
+  </joint>
+  <joint name="L_C_center_plane_link_joint" type="fixed">
+    <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 -0.00091"/>
+    <parent link="L_C_center_cone_link"/>
+    <child link="L_C_center_plane_link"/>
+  </joint>
+  <joint name="L_C_radius_--_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 -0.06091"/>
+    <parent link="L_C_center_cone_link"/>
+    <child link="L_C_radius_--_link"/>
+  </joint>
+  <joint name="L_C_radius_/_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 1.57080" xyz="0.00000 0.00000 -0.05091"/>
+    <parent link="L_C_center_cone_link"/>
+    <child link="L_C_radius_/_link"/>
+  </joint>
+  <joint name="L_C_radius_\_link_joint" type="fixed">
+    <origin rpy="-0.00000 0.00000 -0.78540" xyz="0.00000 0.00000 -0.06091"/>
+    <parent link="L_C_center_cone_link"/>
+    <child link="L_C_radius_\_link"/>
+  </joint>
+  <joint name="L_C_radius_|_link_joint" type="fixed">
+    <origin rpy="-0.00000 0.00000 -1.57080" xyz="0.00000 0.00000 -0.10091"/>
+    <parent link="L_C_center_cone_link"/>
+    <child link="L_C_radius_|_link"/>
+  </joint>
+  <joint name="L_C_tire_link_joint" type="fixed">
+    <origin rpy="0.00000 -0.00000 0.00000" xyz="-0.00000 0.00000 -0.10091"/>
+    <parent link="L_C_center_cone_link"/>
+    <child link="L_C_tire_link"/>
+  </joint>
+  <joint name="L_F_center_cone_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 -0.00000 0.00000" xyz="-0.00000 0.00000 0.12591"/>
+    <parent link="radio1_f_l_link"/>
+    <child link="L_F_center_cone_link"/>
+    <axis xyz="0.00000 0.00000 -1.00000"/>
+  </joint>
+  <joint name="L_F_center_plane_link_joint" type="fixed">
+    <origin rpy="0.00000 -0.00000 0.00000" xyz="-0.00000 0.00000 -0.00091"/>
+    <parent link="L_F_center_cone_link"/>
+    <child link="L_F_center_plane_link"/>
+  </joint>
+  <joint name="L_F_radius_--_link_joint" type="fixed">
+    <origin rpy="0.00000 -0.00000 0.00000" xyz="-0.00000 0.00000 -0.03091"/>
+    <parent link="L_F_center_cone_link"/>
+    <child link="L_F_radius_--_link"/>
+  </joint>
+  <joint name="L_F_radius_/_link_joint" type="fixed">
+    <origin rpy="0.00000 -0.00000 1.57080" xyz="-0.00000 0.00000 -0.04091"/>
+    <parent link="L_F_center_cone_link"/>
+    <child link="L_F_radius_/_link"/>
+  </joint>
+  <joint name="L_F_radius_\_link_joint" type="fixed">
+    <origin rpy="-0.00000 0.00000 -0.78540" xyz="-0.00000 0.00000 -0.04091"/>
+    <parent link="L_F_center_cone_link"/>
+    <child link="L_F_radius_\_link"/>
+  </joint>
+  <joint name="L_F_radius_|_link_joint" type="fixed">
+    <origin rpy="-0.00000 -0.00000 -1.57080" xyz="-0.00000 0.00000 -0.04091"/>
+    <parent link="L_F_center_cone_link"/>
+    <child link="L_F_radius_|_link"/>
+  </joint>
+  <joint name="L_F_tire_link_joint" type="fixed">
+    <origin rpy="0.00000 -0.00000 0.00000" xyz="-0.00000 0.00000 -0.10091"/>
+    <parent link="L_F_center_cone_link"/>
+    <child link="L_F_tire_link"/>
+  </joint>
+  <joint name="R_B_center_cone_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="3.14159 0.00000 0.00000" xyz="0.00000 0.00000 -0.12591"/>
+    <parent link="radio1_b_r_link"/>
+    <child link="R_B_center_cone_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="R_B_center_plane_link_joint" type="fixed">
+    <origin rpy="-3.14159 0.00000 0.00000" xyz="0.00000 0.00000 -0.00091"/>
+    <parent link="R_B_center_cone_link"/>
+    <child link="R_B_center_plane_link"/>
+  </joint>
+  <joint name="R_B_radius_--_link_joint" type="fixed">
+    <origin rpy="-3.14159 0.00000 0.00000" xyz="0.00000 0.00000 -0.00091"/>
+    <parent link="R_B_center_cone_link"/>
+    <child link="R_B_radius_--_link"/>
+  </joint>
+  <joint name="R_B_radius_/_link_joint" type="fixed">
+    <origin rpy="-3.14159 0.00000 -1.57080" xyz="0.00000 0.00000 -0.00091"/>
+    <parent link="R_B_center_cone_link"/>
+    <child link="R_B_radius_/_link"/>
+  </joint>
+  <joint name="R_B_radius_\_link_joint" type="fixed">
+    <origin rpy="3.14159 -0.00000 0.78540" xyz="0.00000 0.00000 -0.00091"/>
+    <parent link="R_B_center_cone_link"/>
+    <child link="R_B_radius_\_link"/>
+  </joint>
+  <joint name="R_B_radius_|_link_joint" type="fixed">
+    <origin rpy="3.14159 -0.00000 1.57080" xyz="0.00000 0.00000 -0.00091"/>
+    <parent link="R_B_center_cone_link"/>
+    <child link="R_B_radius_|_link"/>
+  </joint>
+  <joint name="R_B_tire_link_joint" type="fixed">
+    <origin rpy="-3.14159 0.00000 0.00000" xyz="0.00000 0.00000 -0.10091"/>
+    <parent link="R_B_center_cone_link"/>
+    <child link="R_B_tire_link"/>
+  </joint>
+  <joint name="R_C_center_cone_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="3.14159 0.00000 0.00000" xyz="0.00000 0.00000 -0.12591"/>
+    <parent link="radio1_c_r_link"/>
+    <child link="R_C_center_cone_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="R_C_center_plane_link_joint" type="fixed">
+    <origin rpy="-3.14159 0.00000 0.00000" xyz="0.00000 0.00000 -0.00091"/>
+    <parent link="R_C_center_cone_link"/>
+    <child link="R_C_center_plane_link"/>
+  </joint>
+  <joint name="R_C_radius_--_link_joint" type="fixed">
+    <origin rpy="-3.14159 0.00000 0.00000" xyz="0.00000 0.00000 -0.00091"/>
+    <parent link="R_C_center_cone_link"/>
+    <child link="R_C_radius_--_link"/>
+  </joint>
+  <joint name="R_C_radius_/_link_joint" type="fixed">
+    <origin rpy="-3.14159 0.00000 -1.57080" xyz="0.00000 0.00000 -0.00091"/>
+    <parent link="R_C_center_cone_link"/>
+    <child link="R_C_radius_/_link"/>
+  </joint>
+  <joint name="R_C_radius_\_link_joint" type="fixed">
+    <origin rpy="3.14159 -0.00000 0.78540" xyz="0.00000 0.00000 -0.00091"/>
+    <parent link="R_C_center_cone_link"/>
+    <child link="R_C_radius_\_link"/>
+  </joint>
+  <joint name="R_C_radius_|_link_joint" type="fixed">
+    <origin rpy="3.14159 -0.00000 1.57080" xyz="0.00000 0.00000 -0.00091"/>
+    <parent link="R_C_center_cone_link"/>
+    <child link="R_C_radius_|_link"/>
+  </joint>
+  <joint name="R_C_tire_link_joint" type="fixed">
+    <origin rpy="-3.14159 0.00000 0.00000" xyz="0.00000 0.00000 -0.10091"/>
+    <parent link="R_C_center_cone_link"/>
+    <child link="R_C_tire_link"/>
+  </joint>
+  <joint name="R_F_center_cone_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="3.14159 0.00000 0.00000" xyz="-0.00000 0.00000 -0.12591"/>
+    <parent link="radio1_f_r_link"/>
+    <child link="R_F_center_cone_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="R_F_center_plane_link_joint" type="fixed">
+    <origin rpy="-3.14159 0.00000 0.00000" xyz="0.00000 0.00000 -0.00091"/>
+    <parent link="R_F_center_cone_link"/>
+    <child link="R_F_center_plane_link"/>
+  </joint>
+  <joint name="R_F_radius_--_link_joint" type="fixed">
+    <origin rpy="-3.14159 0.00000 0.00000" xyz="0.00000 0.00000 -0.00091"/>
+    <parent link="R_F_center_cone_link"/>
+    <child link="R_F_radius_--_link"/>
+  </joint>
+  <joint name="R_F_radius_/_link_joint" type="fixed">
+    <origin rpy="-3.14159 0.00000 -1.57080" xyz="0.00000 0.00000 -0.00091"/>
+    <parent link="R_F_center_cone_link"/>
+    <child link="R_F_radius_/_link"/>
+  </joint>
+  <joint name="R_F_radius_\_link_joint" type="fixed">
+    <origin rpy="3.14159 -0.00000 0.78540" xyz="0.00000 0.00000 -0.00091"/>
+    <parent link="R_F_center_cone_link"/>
+    <child link="R_F_radius_\_link"/>
+  </joint>
+  <joint name="R_F_radius_|_link_joint" type="fixed">
+    <origin rpy="3.14159 -0.00000 1.57080" xyz="0.00000 0.00000 -0.00091"/>
+    <parent link="R_F_center_cone_link"/>
+    <child link="R_F_radius_|_link"/>
+  </joint>
+  <joint name="R_F_tire_link_joint" type="fixed">
+    <origin rpy="-3.14159 0.00000 0.00000" xyz="-0.00000 0.00000 -0.10091"/>
+    <parent link="R_F_center_cone_link"/>
+    <child link="R_F_tire_link"/>
+  </joint>
+  <joint name="arm_base_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.05000"/>
+    <parent link="up_platform_link"/>
+    <child link="arm_base_link"/>
+  </joint>
+  <joint name="back_tire_joint" type="fixed">
+    <origin rpy="-3.14159 1.21824 -1.57080" xyz="0.00000 -1.59000 -0.05000"/>
+    <parent link="main_base_link"/>
+    <child link="back_tire_link"/>
+  </joint>
+  <joint name="box_col_limit_b_l_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.95000 -0.70000 0.20000"/>
+    <parent link="mid_platform_link"/>
+    <child link="box_col_limit_b_l_link"/>
+  </joint>
+  <joint name="box_col_limit_b_r_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="-0.95000 -0.70000 0.20000"/>
+    <parent link="mid_platform_link"/>
+    <child link="box_col_limit_b_r_link"/>
+  </joint>
+  <joint name="box_col_limit_f_l_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.95000 0.75000 0.20000"/>
+    <parent link="mid_platform_link"/>
+    <child link="box_col_limit_f_l_link"/>
+  </joint>
+  <joint name="box_col_limit_f_r_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="-0.95000 0.75000 0.20000"/>
+    <parent link="mid_platform_link"/>
+    <child link="box_col_limit_f_r_link"/>
+  </joint>
+  <joint name="box_limit_b_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="-0.95000 0.00000 0.00000"/>
+    <parent link="box_col_limit_b_l_link"/>
+    <child link="box_limit_b_link"/>
+  </joint>
+  <joint name="box_limit_f_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.95000 0.00000 0.00000"/>
+    <parent link="box_col_limit_f_r_link"/>
+    <child link="box_limit_f_link"/>
+  </joint>
+  <joint name="box_limit_l_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 1.57080" xyz="-0.00000 -0.72500 0.00000"/>
+    <parent link="box_col_limit_f_l_link"/>
+    <child link="box_limit_l_link"/>
+  </joint>
+  <joint name="box_limit_r_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 1.57080" xyz="0.00000 0.72500 0.00000"/>
+    <parent link="box_col_limit_b_r_link"/>
+    <child link="box_limit_r_link"/>
+  </joint>
+  <joint name="cushioning2radio2_b_l_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.12500"/>
+    <parent link="cushioning_b_l_link"/>
+    <child link="cushioning2radio2_b_l_link"/>
+  </joint>
+  <joint name="cushioning2radio2_b_r_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.12500"/>
+    <parent link="cushioning_b_r_link"/>
+    <child link="cushioning2radio2_b_r_link"/>
+  </joint>
+  <joint name="cushioning2radio2_c_l_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.12500"/>
+    <parent link="cushioning_c_l_link"/>
+    <child link="cushioning2radio2_c_l_link"/>
+  </joint>
+  <joint name="cushioning2radio2_c_r_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.12500"/>
+    <parent link="cushioning_c_r_link"/>
+    <child link="cushioning2radio2_c_r_link"/>
+  </joint>
+  <joint name="cushioning2radio2_f_l_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.12500"/>
+    <parent link="cushioning_f_l_link"/>
+    <child link="cushioning2radio2_f_l_link"/>
+  </joint>
+  <joint name="cushioning2radio2_f_r_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.12500"/>
+    <parent link="cushioning_f_r_link"/>
+    <child link="cushioning2radio2_f_r_link"/>
+  </joint>
+  <joint name="cushioning_b_l_link_joint" type="prismatic">
+    <limit lower="0.00000" upper="0.15000" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.40000 -1.00000 -0.07500"/>
+    <parent link="low_platform_link"/>
+    <child link="cushioning_b_l_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="cushioning_b_r_link_joint" type="prismatic">
+    <limit lower="0.00000" upper="0.15000" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 0.00000 0.00000" xyz="-0.40000 -1.00000 -0.07500"/>
+    <parent link="low_platform_link"/>
+    <child link="cushioning_b_r_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="cushioning_c_l_link_joint" type="prismatic">
+    <limit lower="0.00000" upper="0.15000" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.40000 0.00000 -0.07500"/>
+    <parent link="low_platform_link"/>
+    <child link="cushioning_c_l_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="cushioning_c_r_link_joint" type="prismatic">
+    <limit lower="0.00000" upper="0.15000" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 0.00000 0.00000" xyz="-0.40000 0.00000 -0.07500"/>
+    <parent link="low_platform_link"/>
+    <child link="cushioning_c_r_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="cushioning_f_l_link_joint" type="prismatic">
+    <limit lower="0.00000" upper="0.15000" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.40000 1.00000 -0.07500"/>
+    <parent link="low_platform_link"/>
+    <child link="cushioning_f_l_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="cushioning_f_r_link_joint" type="prismatic">
+    <limit lower="0.00000" upper="0.15000" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 0.00000 0.00000" xyz="-0.40000 1.00000 -0.07500"/>
+    <parent link="low_platform_link"/>
+    <child link="cushioning_f_r_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="finger_d_link_joint" type="prismatic">
+    <limit lower="0.00000" upper="0.20000" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 0.00000 0.00000" xyz="-0.45000 0.00000 -0.17500"/>
+    <parent link="link_6_link"/>
+    <child link="finger_d_link"/>
+    <axis xyz="1.00000 0.00000 0.00000"/>
+  </joint>
+  <joint name="finger_i_link_joint" type="prismatic">
+    <limit lower="0.00000" upper="0.20000" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.45000 0.00000 -0.17500"/>
+    <parent link="link_6_link"/>
+    <child link="finger_i_link"/>
+    <axis xyz="-1.00000 0.00000 0.00000"/>
+  </joint>
+  <joint name="joint1_link_joint" type="revolute">
+    <limit lower="-3.14000" upper="3.14000" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.10000"/>
+    <parent link="link1_link"/>
+    <child link="joint1_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="joint2_link_joint" type="fixed">
+    <origin rpy="-1.57080 0.00000 0.00000" xyz="0.00000 -0.00000 -0.65000"/>
+    <parent link="link2_link"/>
+    <child link="joint2_link"/>
+  </joint>
+  <joint name="joint3_link_joint" type="revolute">
+    <limit lower="-2.00000" upper="2.00000" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.10000"/>
+    <parent link="link3_link"/>
+    <child link="joint3_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="joint4_link_joint" type="fixed">
+    <origin rpy="-1.57080 0.00000 0.00000" xyz="0.00000 0.00000 -0.55000"/>
+    <parent link="link4_link"/>
+    <child link="joint4_link"/>
+  </joint>
+  <joint name="link1_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.65000"/>
+    <parent link="arm_base_link"/>
+    <child link="link1_link"/>
+  </joint>
+  <joint name="link2_link_joint" type="fixed">
+    <origin rpy="1.57080 0.00000 0.00000" xyz="0.00000 0.65000 0.00000"/>
+    <parent link="joint1_link"/>
+    <child link="link2_link"/>
+  </joint>
+  <joint name="link3_link_joint" type="fixed">
+    <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.10000"/>
+    <parent link="joint2_link"/>
+    <child link="link3_link"/>
+  </joint>
+  <joint name="link4_link_joint" type="fixed">
+    <origin rpy="1.57080 0.00000 0.00000" xyz="0.00000 0.55000 0.00000"/>
+    <parent link="joint3_link"/>
+    <child link="link4_link"/>
+  </joint>
+  <joint name="link5_link_joint" type="prismatic">
+    <limit lower="1.50000" upper="0.00000" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.79952"/>
+    <parent link="joint4_link"/>
+    <child link="link5_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="link_6_link_joint" type="revolute">
+    <limit lower="-3.14000" upper="3.14000" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -1.08412"/>
+    <parent link="link5_link"/>
+    <child link="link_6_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="low_platform_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.20000"/>
+    <parent link="main_base_link"/>
+    <child link="low_platform_link"/>
+  </joint>
+  <joint name="mid_platform_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.75000 0.20000"/>
+    <parent link="main_base_link"/>
+    <child link="mid_platform_link"/>
+  </joint>
+  <joint name="radio1_b_l_link_joint" type="fixed">
+    <origin rpy="-0.00000 1.57080 0.00000" xyz="0.11500 0.00000 -0.00000"/>
+    <parent link="radio1_to_radio2_b_l_link"/>
+    <child link="radio1_b_l_link"/>
+  </joint>
+  <joint name="radio1_b_r_link_joint" type="fixed">
+    <origin rpy="-0.00000 1.57080 0.00000" xyz="-0.11500 0.00000 0.00000"/>
+    <parent link="radio1_to_radio2_b_r_link"/>
+    <child link="radio1_b_r_link"/>
+  </joint>
+  <joint name="radio1_c_l_link_joint" type="fixed">
+    <origin rpy="-0.00000 1.57080 0.00000" xyz="0.11500 0.00000 -0.00000"/>
+    <parent link="radio1_to_radio2_c_l_link"/>
+    <child link="radio1_c_l_link"/>
+  </joint>
+  <joint name="radio1_c_r_link_joint" type="fixed">
+    <origin rpy="-0.00000 1.57080 0.00000" xyz="-0.11500 0.00000 0.00000"/>
+    <parent link="radio1_to_radio2_c_r_link"/>
+    <child link="radio1_c_r_link"/>
+  </joint>
+  <joint name="radio1_f_l_link_joint" type="fixed">
+    <origin rpy="-0.00000 1.57080 0.00000" xyz="0.11500 0.00000 -0.00000"/>
+    <parent link="radio1_to_radio2_f_l_link"/>
+    <child link="radio1_f_l_link"/>
+  </joint>
+  <joint name="radio1_f_r_link_joint" type="fixed">
+    <origin rpy="-0.00000 1.57080 0.00000" xyz="-0.11500 0.00000 -0.00000"/>
+    <parent link="radio1_to_radio2_f_r_link"/>
+    <child link="radio1_f_r_link"/>
+  </joint>
+  <joint name="radio1_to_radio2_b_l_link_joint" type="fixed">
+    <origin rpy="0.00000 0.78540 0.00000" xyz="0.00354 0.00000 -0.24395"/>
+    <parent link="radio2_b_l_link"/>
+    <child link="radio1_to_radio2_b_l_link"/>
+  </joint>
+  <joint name="radio1_to_radio2_b_r_link_joint" type="fixed">
+    <origin rpy="0.00000 -0.78540 0.00000" xyz="-0.00354 0.00000 -0.24395"/>
+    <parent link="radio2_b_r_link"/>
+    <child link="radio1_to_radio2_b_r_link"/>
+  </joint>
+  <joint name="radio1_to_radio2_c_l_link_joint" type="fixed">
+    <origin rpy="0.00000 0.78540 0.00000" xyz="0.00354 0.00000 -0.24395"/>
+    <parent link="radio2_c_l_link"/>
+    <child link="radio1_to_radio2_c_l_link"/>
+  </joint>
+  <joint name="radio1_to_radio2_c_r_link_joint" type="fixed">
+    <origin rpy="0.00000 -0.78540 0.00000" xyz="-0.00354 0.00000 -0.24395"/>
+    <parent link="radio2_c_r_link"/>
+    <child link="radio1_to_radio2_c_r_link"/>
+  </joint>
+  <joint name="radio1_to_radio2_f_l_link_joint" type="fixed">
+    <origin rpy="0.00000 0.78540 0.00000" xyz="0.00354 0.00000 -0.24395"/>
+    <parent link="radio2_f_l_link"/>
+    <child link="radio1_to_radio2_f_l_link"/>
+  </joint>
+  <joint name="radio1_to_radio2_f_r_link_joint" type="fixed">
+    <origin rpy="3.14159 0.78540 -0.00000" xyz="-0.00354 0.00000 0.24395"/>
+    <parent link="radio2_f_r_link"/>
+    <child link="radio1_to_radio2_f_r_link"/>
+  </joint>
+  <joint name="radio2_b_l_link_joint" type="fixed">
+    <origin rpy="0.00000 -0.78540 0.00000" xyz="0.17000 0.00000 -0.16000"/>
+    <parent link="cushioning2radio2_b_l_link"/>
+    <child link="radio2_b_l_link"/>
+  </joint>
+  <joint name="radio2_b_r_link_joint" type="fixed">
+    <origin rpy="0.00000 0.78540 0.00000" xyz="-0.17000 0.00000 -0.16000"/>
+    <parent link="cushioning2radio2_b_r_link"/>
+    <child link="radio2_b_r_link"/>
+  </joint>
+  <joint name="radio2_c_l_link_joint" type="fixed">
+    <origin rpy="0.00000 -0.78540 0.00000" xyz="0.17000 0.00000 -0.16000"/>
+    <parent link="cushioning2radio2_c_l_link"/>
+    <child link="radio2_c_l_link"/>
+  </joint>
+  <joint name="radio2_c_r_link_joint" type="fixed">
+    <origin rpy="0.00000 0.78540 0.00000" xyz="-0.17000 0.00000 -0.16000"/>
+    <parent link="cushioning2radio2_c_r_link"/>
+    <child link="radio2_c_r_link"/>
+  </joint>
+  <joint name="radio2_f_l_link_joint" type="fixed">
+    <origin rpy="0.00000 -0.78540 0.00000" xyz="0.17000 0.00000 -0.16000"/>
+    <parent link="cushioning2radio2_f_l_link"/>
+    <child link="radio2_f_l_link"/>
+  </joint>
+  <joint name="radio2_f_r_link_joint" type="fixed">
+    <origin rpy="-3.14159 0.78540 -0.00000" xyz="-0.17000 0.00000 -0.16000"/>
+    <parent link="cushioning2radio2_f_r_link"/>
+    <child link="radio2_f_r_link"/>
+  </joint>
+  <joint name="up_platform_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.30000"/>
+    <parent link="AA_up_base_link"/>
+    <child link="up_platform_link"/>
+  </joint>
+  <link name="AA_up_base_link">
+    <collision name="up_base_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cube.007.dae" scale="1.00000 0.75000 0.30000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="31.08214" ixy="0.00000" ixz="-0.00000" iyy="50.45714" iyz="0.00000" izz="69.19643"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.06429"/>
+      <mass value="200.00000"/>
+    </inertial>
+    <visual name="up_base">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="chasis"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cube.007.dae" scale="1.00000 0.75000 0.30000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="L_B_center_cone_link">
+    <inertial>
+      <inertia ixx="0.00054" ixy="0.00000" ixz="-0.00000" iyy="0.00031" iyz="0.00000" izz="0.00031"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00659"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="L_B_center_cone">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <mesh filename="file://$(find hermes_description)/meshes/dae/Cone.013.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="L_B_center_plane_link">
+    <collision name="L_B_center_plane_collision">
+      <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="file://$(find hermes_description)/meshes/dae/Cylinder.060.dae" scale="0.27500 0.27500 0.04500"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00036" ixy="-0.00000" ixz="-0.00000" iyy="0.00018" iyz="-0.00000" izz="0.00018"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="0.25000"/>
+    </inertial>
+    <visual name="L_B_center_plane">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.020.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="L_B_radius_--_link">
+    <inertial>
+      <inertia ixx="0.01501" ixy="0.00000" ixz="0.00000" iyy="0.00001" iyz="-0.00000" izz="0.01500"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.04000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="L_B_radius_--">
+      <origin rpy="0.00000 -0.00000 0.00000" xyz="-0.00000 0.00000 0.04000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.012.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="L_B_radius_/_link">
+    <inertial>
+      <inertia ixx="0.01501" ixy="-0.00000" ixz="-0.00000" iyy="0.00751" iyz="-0.00750" izz="0.00751"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 -0.00000 0.05000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="L_B_radius_/">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.05000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.008.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="L_B_radius_\_link">
+    <inertial>
+      <inertia ixx="0.01501" ixy="0.00000" ixz="-0.00000" iyy="0.00751" iyz="0.00750" izz="0.00751"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.03000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="L_B_radius_\">
+      <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 -0.00000 0.03000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.022.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="L_B_radius_|_link">
+    <inertial>
+      <inertia ixx="0.01501" ixy="-0.00000" ixz="-0.00000" iyy="0.01500" iyz="-0.00000" izz="0.00001"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.05000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="L_B_radius_|">
+      <origin rpy="-0.00000 0.00000 -0.00000" xyz="0.00000 -0.00000 0.05000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.023.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="L_B_tire_link">
+    <collision name="L_B_tire_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.058.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.65832" ixy="0.00000" ixz="-0.00000" iyy="0.36033" iyz="0.00000" izz="0.36033"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <mass value="10.00000"/>
+    </inertial>
+    <visual name="L_B_tire">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <material name="tire_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.058.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="L_C_center_cone_link">
+    <inertial>
+      <inertia ixx="0.00054" ixy="0.00000" ixz="-0.00000" iyy="0.00031" iyz="0.00000" izz="0.00031"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.00659"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="L_C_center_cone">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.029.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="L_C_center_plane_link">
+    <collision name="L_C_center_plane_collision">
+      <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <cylinder radius="0.27500" length="0.06000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00036" ixy="-0.00000" ixz="-0.00000" iyy="0.00018" iyz="-0.00000" izz="0.00018"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="0.25000"/>
+    </inertial>
+    <visual name="L_C_center_plane">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 -0.00000 0.00000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.028.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="L_C_radius_--_link">
+    <inertial>
+      <inertia ixx="0.01501" ixy="-0.00000" ixz="-0.00000" iyy="0.00001" iyz="-0.00000" izz="0.01500"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 -0.00000 0.06000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="L_C_radius_--">
+      <origin rpy="0.00000 -0.00000 0.00000" xyz="-0.00000 -0.00000 0.06000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.027.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="L_C_radius_/_link">
+    <inertial>
+      <inertia ixx="0.01501" ixy="-0.00000" ixz="-0.00000" iyy="0.00751" iyz="-0.00750" izz="0.00751"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 -0.00000 0.05000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="L_C_radius_/">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.05000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.026.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="L_C_radius_\_link">
+    <inertial>
+      <inertia ixx="0.01501" ixy="0.00000" ixz="-0.00000" iyy="0.00751" iyz="0.00750" izz="0.00751"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 -0.00000 0.06000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="L_C_radius_\">
+      <origin rpy="0.00000 -0.00000 0.00000" xyz="-0.00000 -0.00000 0.06000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.025.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="L_C_radius_|_link">
+    <inertial>
+      <inertia ixx="0.01501" ixy="-0.00000" ixz="-0.00000" iyy="0.01500" iyz="-0.00000" izz="0.00001"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 -0.00000 0.10000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="L_C_radius_|">
+      <origin rpy="-0.00000 0.00000 -0.00000" xyz="-0.00000 -0.00000 0.10000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.024.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="L_C_tire_link">
+    <collision name="L_C_tire_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 -0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.018.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.65832" ixy="0.00000" ixz="-0.00000" iyy="0.36033" iyz="0.00000" izz="0.36033"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+      <mass value="10.00000"/>
+    </inertial>
+    <visual name="L_C_tire">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <material name="tire_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.018.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="L_F_center_cone_link">
+    <inertial>
+      <inertia ixx="0.00054" ixy="0.00000" ixz="0.00000" iyy="0.00031" iyz="0.00000" izz="0.00031"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00659"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="L_F_center_cone">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.043.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="L_F_center_plane_link">
+    <collision name="L_F_center_plane_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <cylinder radius="0.27500" length="0.06000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00036" ixy="-0.00000" ixz="0.00000" iyy="0.00018" iyz="-0.00000" izz="0.00018"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <mass value="0.25000"/>
+    </inertial>
+    <visual name="L_F_center_plane">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.042.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="L_F_radius_--_link">
+    <inertial>
+      <inertia ixx="0.01501" ixy="0.00000" ixz="0.00000" iyy="0.00001" iyz="-0.00000" izz="0.01500"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.03000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="L_F_radius_--">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.03000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.041.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="L_F_radius_/_link">
+    <inertial>
+      <inertia ixx="0.01501" ixy="-0.00000" ixz="-0.00000" iyy="0.00751" iyz="-0.00750" izz="0.00751"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 -0.00000 0.04000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="L_F_radius_/">
+      <origin rpy="0.00000 -0.00000 0.00000" xyz="-0.00000 -0.00000 0.04000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.040.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="L_F_radius_\_link">
+    <inertial>
+      <inertia ixx="0.01501" ixy="0.00000" ixz="-0.00000" iyy="0.00751" iyz="0.00750" izz="0.00751"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.04000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="L_F_radius_\">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.04000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.039.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="L_F_radius_|_link">
+    <inertial>
+      <inertia ixx="0.01501" ixy="0.00000" ixz="0.00000" iyy="0.01500" iyz="-0.00000" izz="0.00001"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.04000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="L_F_radius_|">
+      <origin rpy="-0.00000 -0.00000 -0.00000" xyz="0.00000 0.00000 0.04000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.038.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="L_F_tire_link">
+    <collision name="L_F_tire_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.037.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.65832" ixy="0.00000" ixz="0.00000" iyy="0.36033" iyz="0.00000" izz="0.36033"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+      <mass value="10.00000"/>
+    </inertial>
+    <visual name="L_F_tire">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="tire_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.037.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="R_B_center_cone_link">
+    <inertial>
+      <inertia ixx="0.00054" ixy="0.00000" ixz="0.00000" iyy="0.00031" iyz="0.00000" izz="0.00031"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00659"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="R_B_center_cone">
+      <origin rpy="0.00000 -0.00000 -0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.007.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="R_B_center_plane_link">
+    <collision name="R_B_center_plane_collision">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <cylinder radius="0.27500" length="0.06000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00036" ixy="-0.00000" ixz="-0.00000" iyy="0.00018" iyz="-0.00000" izz="0.00018"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <mass value="0.25000"/>
+    </inertial>
+    <visual name="R_B_center_plane">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.006.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="R_B_radius_--_link">
+    <inertial>
+      <inertia ixx="0.01501" ixy="0.00000" ixz="0.00000" iyy="0.00001" iyz="-0.00000" izz="0.01500"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="R_B_radius_--">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.005.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="R_B_radius_/_link">
+    <inertial>
+      <inertia ixx="0.01501" ixy="0.00000" ixz="-0.00000" iyy="0.00751" iyz="0.00750" izz="0.00751"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="R_B_radius_\">
+      <origin rpy="-0.00000 0.00000 -2.35619" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.003.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="R_B_radius_\_link">
+    <inertial>
+      <inertia ixx="0.01501" ixy="-0.00000" ixz="-0.00000" iyy="0.00751" iyz="-0.00750" izz="0.00751"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="R_B_radius_/">
+      <origin rpy="-0.00000 0.00000 2.35619" xyz="-0.00000 0.00000 -0.00000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.004.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="R_B_radius_|_link">
+    <inertial>
+      <inertia ixx="0.01501" ixy="-0.00000" ixz="-0.00000" iyy="0.01500" iyz="-0.00000" izz="0.00001"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 -0.00000 -0.00000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="R_B_radius_|">
+      <origin rpy="0.00000 -0.00000 -0.00000" xyz="-0.00000 -0.00000 -0.00000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.002.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="R_B_tire_link">
+    <collision name="R_B_tire_collision">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.001.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.65832" ixy="0.00000" ixz="-0.00000" iyy="0.36033" iyz="0.00000" izz="0.36033"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <mass value="10.00000"/>
+    </inertial>
+    <visual name="R_B_tire">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <material name="tire_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.001.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="R_C_center_cone_link">
+    <inertial>
+      <inertia ixx="0.00054" ixy="0.00000" ixz="0.00000" iyy="0.00031" iyz="0.00000" izz="0.00031"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.00659"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="R_C_center_cone">
+      <origin rpy="0.00000 -0.00000 -0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.017.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="R_C_center_plane_link">
+    <collision name="R_C_center_plane_collision">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <cylinder radius="0.27500" length="0.06000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00036" ixy="-0.00000" ixz="-0.00000" iyy="0.00018" iyz="-0.00000" izz="0.00018"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <mass value="0.25000"/>
+    </inertial>
+    <visual name="R_C_center_plane">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-0.00000 -0.00000 0.00000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.016.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="R_C_radius_--_link">
+    <inertial>
+      <inertia ixx="0.01501" ixy="0.00000" ixz="0.00000" iyy="0.00001" iyz="-0.00000" izz="0.01500"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 -0.00000 0.00000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="R_C_radius_--">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="-0.00000 -0.00000 0.00000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.015.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="R_C_radius_/_link">
+    <inertial>
+      <inertia ixx="0.01501" ixy="0.00000" ixz="-0.00000" iyy="0.00751" iyz="0.00750" izz="0.00751"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="R_C_radius_\">
+      <origin rpy="-0.00000 0.00000 -2.35619" xyz="-0.00000 0.00000 -0.00000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.011.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="R_C_radius_\_link">
+    <inertial>
+      <inertia ixx="0.01501" ixy="-0.00000" ixz="-0.00000" iyy="0.00751" iyz="-0.00750" izz="0.00751"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 -0.00000 0.00000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="R_C_radius_/">
+      <origin rpy="-0.00000 0.00000 2.35619" xyz="-0.00000 -0.00000 -0.00000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.014.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="R_C_radius_|_link">
+    <inertial>
+      <inertia ixx="0.01501" ixy="-0.00000" ixz="-0.00000" iyy="0.01500" iyz="-0.00000" izz="0.00001"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.00000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="R_C_radius_|">
+      <origin rpy="0.00000 -0.00000 -0.00000" xyz="0.00000 -0.00000 0.00000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.010.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="R_C_tire_link">
+    <collision name="R_C_tire_collision">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-0.00000 -0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.009.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.65832" ixy="0.00000" ixz="-0.00000" iyy="0.36033" iyz="0.00000" izz="0.36033"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 -0.00000 -0.00000"/>
+      <mass value="10.00000"/>
+    </inertial>
+    <visual name="R_C_tire">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-0.00000 -0.00000 0.00000"/>
+      <material name="tire_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.009.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="R_F_center_cone_link">
+    <inertial>
+      <inertia ixx="0.00054" ixy="0.00000" ixz="0.00000" iyy="0.00031" iyz="0.00000" izz="0.00031"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00659"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="R_F_center_cone">
+      <origin rpy="0.00000 -0.00000 -0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.064.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="R_F_center_plane_link">
+    <collision name="R_F_center_plane_collision">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <cylinder radius="0.27500" length="0.06000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00036" ixy="-0.00000" ixz="-0.00000" iyy="0.00018" iyz="-0.00000" izz="0.00018"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <mass value="0.25000"/>
+    </inertial>
+    <visual name="R_F_center_plane">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.063.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="R_F_radius_--_link">
+    <inertial>
+      <inertia ixx="0.01501" ixy="0.00000" ixz="0.00000" iyy="0.00001" iyz="-0.00000" izz="0.01500"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="R_F_radius_--">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.062.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="R_F_radius_/_link">
+    <inertial>
+      <inertia ixx="0.01501" ixy="0.00000" ixz="-0.00000" iyy="0.00751" iyz="0.00750" izz="0.00751"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="R_F_radius_\">
+      <origin rpy="-0.00000 0.00000 -2.35619" xyz="-0.00000 0.00000 -0.00000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.060.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="R_F_radius_\_link">
+    <inertial>
+      <inertia ixx="0.01501" ixy="-0.00000" ixz="-0.00000" iyy="0.00751" iyz="-0.00750" izz="0.00751"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 -0.00000 -0.00000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="R_F_radius_/">
+      <origin rpy="-0.00000 0.00000 2.35619" xyz="-0.00000 -0.00000 -0.00000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.061.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="R_F_radius_|_link">
+    <inertial>
+      <inertia ixx="0.01501" ixy="-0.00000" ixz="-0.00000" iyy="0.01500" iyz="-0.00000" izz="0.00001"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="R_F_radius_|">
+      <origin rpy="0.00000 -0.00000 -0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="radius_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.059.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="R_F_tire_link">
+    <collision name="R_F_tire_collision">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.021.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.65832" ixy="0.00000" ixz="-0.00000" iyy="0.36033" iyz="0.00000" izz="0.36033"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+      <mass value="10.00000"/>
+    </inertial>
+    <visual name="R_F_tire">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="tire_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.021.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="arm_base_link">
+    <collision name="arm_base_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <cylinder radius="0.35000" length="0.10000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.47187" ixy="0.00000" ixz="0.00000" iyy="0.47187" iyz="0.00000" izz="0.91875"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="15.00000"/>
+    </inertial>
+    <visual name="arm_base">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <material name="aaaaaa"/>
+      <geometry>
+        <cylinder radius="0.35000" length="0.10000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="back_tire_link">
+    <collision name="back_tire_collision">
+      <origin rpy="-0.00000 -0.00349 -0.00000" xyz="0.00000 -0.00000 -0.11500"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.019.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.36033" ixy="0.00000" ixz="-0.00000" iyy="0.62279" iyz="-0.09657" izz="0.39586"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 -0.11500"/>
+      <mass value="10.00000"/>
+    </inertial>
+    <visual name="back_tire">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.11500"/>
+      <material name="tire_color"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cone.019.dae" scale="0.06000 0.06000 0.01500"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="box_col_limit_b_l_link">
+    <collision name="box_col_limit_b_l_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <geometry>
+        <cylinder radius="0.05000" length="0.50000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.04292" ixy="0.00000" ixz="0.00000" iyy="0.04292" iyz="0.00000" izz="0.00250"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <mass value="2.00000"/>
+    </inertial>
+    <visual name="box_col_limit_b_l">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <material name="box_pilar"/>
+      <geometry>
+        <cylinder radius="0.05000" length="0.50000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="box_col_limit_b_r_link">
+    <collision name="box_col_limit_b_r_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <cylinder radius="0.05000" length="0.50000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.04292" ixy="0.00000" ixz="0.00000" iyy="0.04292" iyz="0.00000" izz="0.00250"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="2.00000"/>
+    </inertial>
+    <visual name="box_col_limit_b_r">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <material name="box_pilar"/>
+      <geometry>
+        <cylinder radius="0.05000" length="0.50000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="box_col_limit_f_l_link">
+    <collision name="box_col_limit_f_l_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <geometry>
+        <cylinder radius="0.05000" length="0.50000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.04292" ixy="0.00000" ixz="0.00000" iyy="0.04292" iyz="0.00000" izz="0.00250"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <mass value="2.00000"/>
+    </inertial>
+    <visual name="box_col_limit_f_l">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <material name="box_pilar"/>
+      <geometry>
+        <cylinder radius="0.05000" length="0.50000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="box_col_limit_f_r_link">
+    <collision name="box_col_limit_f_r_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <cylinder radius="0.05000" length="0.50000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.04292" ixy="0.00000" ixz="0.00000" iyy="0.04292" iyz="0.00000" izz="0.00250"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="2.00000"/>
+    </inertial>
+    <visual name="box_col_limit_f_r">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <material name="box_pilar"/>
+      <geometry>
+        <cylinder radius="0.05000" length="0.50000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="box_limit_b_link">
+    <collision name="box_limit_b_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <box size="1.90000 0.10000 0.10000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.01667" ixy="0.00000" ixz="0.00000" iyy="1.21667" iyz="0.00000" izz="1.20667"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="4.00000"/>
+    </inertial>
+    <visual name="box_limit_b">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <material name="box_limit"/>
+      <geometry>
+        <box size="1.90000 0.10000 0.10000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="box_limit_f_link">
+    <collision name="box_limit_f_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <geometry>
+        <box size="1.90000 0.10000 0.10000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.01667" ixy="0.00000" ixz="0.00000" iyy="1.21667" iyz="0.00000" izz="1.20667"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <mass value="4.00000"/>
+    </inertial>
+    <visual name="box_limit_f">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <material name="box_limit"/>
+      <geometry>
+        <box size="1.90000 0.10000 0.10000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="box_limit_l_link">
+    <collision name="box_limit_l_collision">
+      <origin rpy="0.00000 0.00000 -0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <geometry>
+        <box size="1.45000 0.10000 0.10000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.71417" ixy="0.00000" ixz="0.00000" iyy="0.01667" iyz="0.00000" izz="0.70417"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <mass value="4.00000"/>
+    </inertial>
+    <visual name="box_limit_l">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <material name="box_limit"/>
+      <geometry>
+        <box size="1.45000 0.10000 0.10000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="box_limit_r_link">
+    <collision name="box_limit_r_collision">
+      <origin rpy="0.00000 0.00000 -0.00000" xyz="-0.00000 -0.00000 0.00000"/>
+      <geometry>
+        <box size="1.45000 0.10000 0.10000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.71417" ixy="0.00000" ixz="0.00000" iyy="0.01667" iyz="0.00000" izz="0.70417"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="4.00000"/>
+    </inertial>
+    <visual name="box_limit_r">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <material name="box_limit"/>
+      <geometry>
+        <box size="1.45000 0.10000 0.10000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="cushioning2radio2_b_l_link">
+    <collision name="cushioning2radio2_b_l_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <sphere radius="0.05000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00100" ixy="0.00000" ixz="0.00000" iyy="0.00100" iyz="0.00000" izz="0.00100"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <mass value="1.00000"/>
+    </inertial>
+    <visual name="cushioning2radio2_b_l">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="aaaaaa"/>
+      <geometry>
+        <sphere radius="0.05000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="cushioning2radio2_b_r_link">
+    <collision name="cushioning2radio2_b_r_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <geometry>
+        <sphere radius="0.05000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00100" ixy="0.00000" ixz="0.00000" iyy="0.00100" iyz="0.00000" izz="0.00100"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <mass value="1.00000"/>
+    </inertial>
+    <visual name="cushioning2radio2_b_r">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="aaaaaa"/>
+      <geometry>
+        <sphere radius="0.05000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="cushioning2radio2_c_l_link">
+    <collision name="cushioning2radio2_c_l_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <sphere radius="0.05000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00100" ixy="0.00000" ixz="0.00000" iyy="0.00100" iyz="0.00000" izz="0.00100"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <mass value="1.00000"/>
+    </inertial>
+    <visual name="cushioning2radio2_c_l">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="aaaaaa"/>
+      <geometry>
+        <sphere radius="0.05000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="cushioning2radio2_c_r_link">
+    <collision name="cushioning2radio2_c_r_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <geometry>
+        <sphere radius="0.05000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00100" ixy="0.00000" ixz="0.00000" iyy="0.00100" iyz="0.00000" izz="0.00100"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <mass value="1.00000"/>
+    </inertial>
+    <visual name="cushioning2radio2_c_r">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="aaaaaa"/>
+      <geometry>
+        <sphere radius="0.05000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="cushioning2radio2_f_l_link">
+    <collision name="cushioning2radio2_f_l_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <sphere radius="0.05000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00100" ixy="0.00000" ixz="0.00000" iyy="0.00100" iyz="0.00000" izz="0.00100"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <mass value="1.00000"/>
+    </inertial>
+    <visual name="cushioning2radio2_f_l">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="aaaaaa"/>
+      <geometry>
+        <sphere radius="0.05000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="cushioning2radio2_f_r_link">
+    <collision name="cushioning2radio2_f_r_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <geometry>
+        <sphere radius="0.05000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00100" ixy="0.00000" ixz="0.00000" iyy="0.00100" iyz="0.00000" izz="0.00100"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <mass value="1.00000"/>
+    </inertial>
+    <visual name="cushioning2radio2_f_r">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="aaaaaa"/>
+      <geometry>
+        <sphere radius="0.05000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="cushioning_b_l_link">
+    <collision name="cushioning_b_l_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.25000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.04292" ixy="0.00000" ixz="0.00000" iyy="0.04292" iyz="0.00000" izz="0.00250"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="8.00000"/>
+    </inertial>
+    <visual name="cushioning_b_l">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.25000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="cushioning_b_r_link">
+    <collision name="cushioning_b_r_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.25000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.04292" ixy="0.00000" ixz="0.00000" iyy="0.04292" iyz="0.00000" izz="0.00250"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <mass value="8.00000"/>
+    </inertial>
+    <visual name="cushioning_b_r">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.25000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="cushioning_c_l_link">
+    <collision name="cushioning_c_l_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.25000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.04292" ixy="0.00000" ixz="0.00000" iyy="0.04292" iyz="0.00000" izz="0.00250"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="8.00000"/>
+    </inertial>
+    <visual name="cushioning_c_l">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.25000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="cushioning_c_r_link">
+    <collision name="cushioning_c_r_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.25000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.04292" ixy="0.00000" ixz="0.00000" iyy="0.04292" iyz="0.00000" izz="0.00250"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <mass value="8.00000"/>
+    </inertial>
+    <visual name="cushioning_c_r">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.25000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="cushioning_f_l_link">
+    <collision name="cushioning_f_l_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.25000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.04292" ixy="0.00000" ixz="0.00000" iyy="0.04292" iyz="0.00000" izz="0.00250"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="8.00000"/>
+    </inertial>
+    <visual name="cushioning_f_l">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.25000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="cushioning_f_r_link">
+    <collision name="cushioning_f_r_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.25000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.04292" ixy="0.00000" ixz="0.00000" iyy="0.04292" iyz="0.00000" izz="0.00250"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <mass value="8.00000"/>
+    </inertial>
+    <visual name="cushioning_f_r">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.25000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="finger_d_link">
+    <collision name="finger_d_collision">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cube.001.dae" scale="0.05000 0.10000 0.15000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.02340" ixy="0.00020" ixz="0.00210" iyy="0.01715" iyz="0.00000" izz="0.00815"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.01667 0.00000 0.05000"/>
+      <mass value="2.00000"/>
+    </inertial>
+    <visual name="finger_d">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="aaaaaa"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cube.001.dae" scale="0.05000 0.10000 0.15000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="finger_i_link">
+    <collision name="finger_i_collision">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cube.003.dae" scale="0.05000 0.10000 0.15000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.02340" ixy="0.00020" ixz="-0.00210" iyy="0.01715" iyz="0.00000" izz="0.00815"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.01667 0.00000 0.05000"/>
+      <mass value="2.00000"/>
+    </inertial>
+    <visual name="finger_i">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="aaaaaa"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cube.003.dae" scale="0.05000 0.10000 0.15000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="joint1_link">
+    <inertial>
+      <inertia ixx="0.00800" ixy="0.00000" ixz="0.00000" iyy="0.00800" iyz="0.00000" izz="0.00800"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="2.00000"/>
+    </inertial>
+    <visual name="joint1">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <material name="aaaaaa"/>
+      <geometry>
+        <sphere radius="0.10000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="joint2_link">
+    <inertial>
+      <inertia ixx="0.00800" ixy="0.00000" ixz="0.00000" iyy="0.00800" iyz="0.00000" izz="0.00800"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+      <mass value="2.00000"/>
+    </inertial>
+    <visual name="joint2">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+      <material name="aaaaaa"/>
+      <geometry>
+        <sphere radius="0.10000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="joint3_link">
+    <inertial>
+      <inertia ixx="0.00800" ixy="0.00000" ixz="0.00000" iyy="0.00800" iyz="0.00000" izz="0.00800"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+      <mass value="2.00000"/>
+    </inertial>
+    <visual name="joint3">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+      <material name="aaaaaa"/>
+      <geometry>
+        <sphere radius="0.10000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="joint4_link">
+    <collision name="joint4_collision">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.00000"/>
+      <geometry>
+        <cylinder radius="0.12500" length="0.40000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.01724" ixy="0.00000" ixz="0.00000" iyy="0.01724" iyz="0.00000" izz="0.00781"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+      <mass value="1.00000"/>
+    </inertial>
+    <visual name="joint4">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+      <material name="aaaaaa"/>
+      <geometry>
+        <cylinder radius="0.12500" length="0.40000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="link1_link">
+    <collision name="link1_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.25000"/>
+      <geometry>
+        <cylinder radius="0.10000" length="0.70000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.01750" ixy="0.00000" ixz="0.00000" iyy="0.01750" iyz="0.00000" izz="0.01500"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="3.00000"/>
+    </inertial>
+    <visual name="link1">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.25000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <cylinder radius="0.10000" length="0.70000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="link2_link">
+    <collision name="link2_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+      <geometry>
+        <cylinder radius="0.10000" length="1.30000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="1.72000" ixy="0.00000" ixz="0.00000" iyy="0.06000" iyz="-0.00000" izz="1.72000"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+      <mass value="12.00000"/>
+    </inertial>
+    <visual name="link2">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <cylinder radius="0.10000" length="1.30000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="link3_link">
+    <inertial>
+      <inertia ixx="0.01750" ixy="0.00000" ixz="0.00000" iyy="0.01750" iyz="0.00000" izz="0.01500"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.00000"/>
+      <mass value="3.00000"/>
+    </inertial>
+    <visual name="link3">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <cylinder radius="0.10000" length="0.20000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="link4_link">
+    <collision name="link4_collision">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <cylinder radius="0.10000" length="1.10000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.25833" ixy="0.00000" ixz="0.00000" iyy="0.01250" iyz="-0.00000" izz="0.25833"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="2.50000"/>
+    </inertial>
+    <visual name="link4">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <cylinder radius="0.10000" length="1.10000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="link5_link">
+    <collision name="link5_collision">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00040"/>
+      <geometry>
+        <cylinder radius="0.07500" length="2.20000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.80948" ixy="0.00000" ixz="0.00000" iyy="0.80948" iyz="0.00000" izz="0.00563"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.04000"/>
+      <mass value="2.00000"/>
+    </inertial>
+    <visual name="link5">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.04000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <cylinder radius="0.07500" length="2.20000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="link_6_link">
+    <collision name="link_6_collision">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <box size="1.00000 0.20000 0.05000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00354" ixy="0.00000" ixz="0.00000" iyy="0.04104" iyz="0.00000" izz="0.04417"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <mass value="1.00000"/>
+    </inertial>
+    <visual name="link_6">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="aaaaaa"/>
+      <geometry>
+        <box size="1.00000 0.20000 0.05000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="low_platform_link">
+    <inertial>
+      <inertia ixx="0.45375" ixy="0.00000" ixz="0.00000" iyy="0.20167" iyz="0.00000" izz="0.65542"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="low_platform">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <material name="blue_metal2"/>
+      <geometry>
+        <box size="2.20000 3.30000 0.00100"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="main_base_link">
+    <collision name="main_base_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cube.dae" scale="1.10000 1.65000 0.20000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="590.84569" ixy="-0.00000" ixz="0.00000" iyy="267.78636" iyz="0.00000" izz="839.95433"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00628"/>
+      <mass value="700.00000"/>
+    </inertial>
+    <visual name="main_base">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <material name="chasis"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cube.dae" scale="1.10000 1.65000 0.20000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="mid_platform_link">
+    <collision name="mid_platform_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.00000"/>
+      <geometry>
+        <box size="2.00000 1.50000 0.01000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.03750" ixy="0.00000" ixz="0.00000" iyy="0.06667" iyz="0.00000" izz="0.10417"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.00000"/>
+      <mass value="0.20000"/>
+    </inertial>
+    <visual name="mid_platform">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <material name="box_limit"/>
+      <geometry>
+        <box size="2.00000 1.50000 0.01000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="radio1_b_l_link">
+    <collision name="radio1_b_l_collision">
+      <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <box size="0.02000 0.02000 0.02000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00250" ixy="0.00000" ixz="0.00000" iyy="0.04292" iyz="0.00000" izz="0.04292"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="8.00000"/>
+    </inertial>
+    <visual name="radio1_b_l">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.25000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="radio1_b_r_link">
+    <collision name="radio1_b_r_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.25000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00250" ixy="0.00000" ixz="0.00000" iyy="0.04292" iyz="0.00000" izz="0.04292"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <mass value="8.00000"/>
+    </inertial>
+    <visual name="radio1_b_r">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.25000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="radio1_c_l_link">
+    <collision name="radio1_c_l_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.25000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00250" ixy="0.00000" ixz="0.00000" iyy="0.04292" iyz="0.00000" izz="0.04292"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="8.00000"/>
+    </inertial>
+    <visual name="radio1_c_l">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.25000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="radio1_c_r_link">
+    <collision name="radio1_c_r_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.25000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00250" ixy="0.00000" ixz="0.00000" iyy="0.04292" iyz="0.00000" izz="0.04292"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <mass value="8.00000"/>
+    </inertial>
+    <visual name="radio1_c_r">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.25000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="radio1_f_l_link">
+    <collision name="radio1_f_l_collision">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -1.70280"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.25000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00250" ixy="0.00000" ixz="0.00000" iyy="0.04292" iyz="0.00000" izz="0.04292"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -1.72000"/>
+      <mass value="8.00000"/>
+    </inertial>
+    <visual name="radio1_f_l">
+      <origin rpy="0.00000 -0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.25000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="radio1_f_r_link">
+    <collision name="radio1_f_r_collision">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 1.70280"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.25000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00250" ixy="-0.00000" ixz="0.00000" iyy="0.04292" iyz="-0.00000" izz="0.04292"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 1.72000"/>
+      <mass value="8.00000"/>
+    </inertial>
+    <visual name="radio1_f_r">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.25000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="radio1_to_radio2_b_l_link">
+    <collision name="radio1_to_radio2_b_l_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <sphere radius="0.05000"/>
+      </geometry>
+    </collision>
+    <collision name="radio1_to_radio2_b_l_collision.000">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <cylinder radius="0.01000" length="0.02000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00100" ixy="0.00000" ixz="0.00000" iyy="0.00100" iyz="0.00000" izz="0.00100"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <mass value="1.00000"/>
+    </inertial>
+    <visual name="radio1_to_radio2_b_l">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="aaaaaa"/>
+      <geometry>
+        <sphere radius="0.05000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="radio1_to_radio2_b_r_link">
+    <collision name="radio1_to_radio2_b_r_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <sphere radius="0.05000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00100" ixy="0.00000" ixz="0.00000" iyy="0.00100" iyz="0.00000" izz="0.00100"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <mass value="1.00000"/>
+    </inertial>
+    <visual name="radio1_to_radio2_b_r">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <material name="aaaaaa"/>
+      <geometry>
+        <sphere radius="0.05000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="radio1_to_radio2_c_l_link">
+    <collision name="radio1_to_radio2_c_l_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <sphere radius="0.05000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00100" ixy="0.00000" ixz="0.00000" iyy="0.00100" iyz="0.00000" izz="0.00100"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <mass value="1.00000"/>
+    </inertial>
+    <visual name="radio1_to_radio2_c_l">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="aaaaaa"/>
+      <geometry>
+        <sphere radius="0.05000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="radio1_to_radio2_c_r_link">
+    <collision name="radio1_to_radio2_c_r_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <sphere radius="0.05000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00100" ixy="0.00000" ixz="0.00000" iyy="0.00100" iyz="0.00000" izz="0.00100"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <mass value="1.00000"/>
+    </inertial>
+    <visual name="radio1_to_radio2_c_r">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <material name="aaaaaa"/>
+      <geometry>
+        <sphere radius="0.05000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="radio1_to_radio2_f_l_link">
+    <collision name="radio1_to_radio2_f_l_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <sphere radius="0.05000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00100" ixy="0.00000" ixz="0.00000" iyy="0.00100" iyz="0.00000" izz="0.00100"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <mass value="1.00000"/>
+    </inertial>
+    <visual name="radio1_to_radio2_f_l">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="aaaaaa"/>
+      <geometry>
+        <sphere radius="0.05000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="radio1_to_radio2_f_r_link">
+    <collision name="radio1_to_radio2_f_r_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <sphere radius="0.05000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00100" ixy="-0.00000" ixz="0.00000" iyy="0.00100" iyz="-0.00000" izz="0.00100"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <mass value="1.00000"/>
+    </inertial>
+    <visual name="radio1_to_radio2_f_r">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <material name="aaaaaa"/>
+      <geometry>
+        <sphere radius="0.05000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="radio2_b_l_link">
+    <collision name="radio2_b_l_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.50000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.05326" ixy="0.00000" ixz="0.05169" iyy="0.10495" iyz="0.00000" izz="0.05326"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <mass value="5.00000"/>
+    </inertial>
+    <visual name="radio2_b_l">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.50000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="radio2_b_r_link">
+    <collision name="radio2_b_r_collision">
+      <origin rpy="3.14159 0.00000 3.14159" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.50000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.05326" ixy="0.00000" ixz="-0.05169" iyy="0.10495" iyz="0.00000" izz="0.05326"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <mass value="5.00000"/>
+    </inertial>
+    <visual name="radio2_b_r">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.50000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="radio2_c_l_link">
+    <collision name="radio2_c_l_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.50000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.05326" ixy="0.00000" ixz="0.05169" iyy="0.10495" iyz="0.00000" izz="0.05326"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <mass value="5.00000"/>
+    </inertial>
+    <visual name="radio2_c_l">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.50000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="radio2_c_r_link">
+    <collision name="radio2_f_c_collision">
+      <origin rpy="3.14159 0.00000 3.14159" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.50000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.05326" ixy="0.00000" ixz="-0.05169" iyy="0.10495" iyz="0.00000" izz="0.05326"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <mass value="5.00000"/>
+    </inertial>
+    <visual name="radio2_f_c">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.50000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="radio2_f_l_link">
+    <collision name="radio2_f_l_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.50000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.05326" ixy="0.00000" ixz="0.05169" iyy="0.10495" iyz="0.00000" izz="0.05326"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <mass value="5.00000"/>
+    </inertial>
+    <visual name="radio2_f_l">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.50000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="radio2_f_r_link">
+    <collision name="radio2_f_r_collision">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.50000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.05326" ixy="0.00000" ixz="-0.05169" iyy="0.10495" iyz="0.00000" izz="0.05326"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="5.00000"/>
+    </inertial>
+    <visual name="radio2_f_r">
+      <origin rpy="0.00000 0.00000 -0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <material name="blue_metal"/>
+      <geometry>
+        <cylinder radius="0.02500" length="0.50000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="up_platform_link">
+    <inertial>
+      <inertia ixx="0.02344" ixy="0.00000" ixz="0.00000" iyy="0.04167" iyz="0.00000" izz="0.06510"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="0.50000"/>
+    </inertial>
+    <visual name="up_platform">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <material name="aaaaaa"/>
+      <geometry>
+        <box size="1.00000 0.75000 0.01000"/>
+      </geometry>
+    </visual>
+  </link>
+  <material name="aaaaaa">
+    <color rgba="0.04706 0.05490 0.07059 1.00000"/>
+  </material>
+  <material name="blue_metal">
+    <color rgba="0.09412 0.10980 0.21961 1.00000"/>
+  </material>
+  <material name="blue_metal2">
+    <color rgba="0.01961 0.02353 0.04706 1.00000"/>
+  </material>
+  <material name="box_limit">
+    <color rgba="0.17647 0.20784 0.41961 1.00000"/>
+  </material>
+  <material name="box_pilar">
+    <color rgba="0.23137 0.26275 0.31765 1.00000"/>
+  </material>
+  <material name="chasis">
+    <color rgba="0.09412 0.07059 0.24314 1.00000"/>
+  </material>
+  <material name="radius_color">
+    <color rgba="0.08627 0.09412 0.11373 1.00000"/>
+  </material>
+  <material name="tire_color">
+    <color rgba="0.00392 0.00392 0.00392 1.00000"/>
+  </material>
+</robot>

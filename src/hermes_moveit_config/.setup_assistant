@@ -1,0 +1,27 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: hermes_description
+    relative_path: robots/hermes.urdf.xacro
+  srdf:
+    relative_path: config/hermes.srdf
+  package_settings:
+    author_name: Sergio Sanchez Hernandez
+    author_email: s.sanchezh.2022@alumnos.urjc.es
+    generated_timestamp: 1746718799
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+      - effort
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+      - effort

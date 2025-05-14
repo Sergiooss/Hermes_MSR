@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="hermes">
+    <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
+
+    <!-- Import hermes urdf file -->
+    <xacro:include filename="$(find hermes_description)/robots/hermes.urdf.xacro" />
+
+    <!-- Import hermes.srdf -->
+    <xacro:include filename="hermes.srdf" />
+
+    <!-- Import control_xacro -->
+    <xacro:include filename="hermes.ros2_control.xacro" />
+
+
+    <xacro:hermes_ros2_control name="ScaraArm" initial_positions_file="$(arg initial_positions_file)"/>
+
+</robot>

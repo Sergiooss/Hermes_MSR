@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="radio_wheel">
+
+    <!-- Macro to create wheel spokes -->
+    <xacro:macro name="create_wheel_spoke" params="name parent_link rpy">
+        <link name="${name}_link">
+            <inertial>
+                <mass value="0.5"/>
+                <inertia ixx="0.01501" ixy="-0" ixz="-0" iyy="0.00751" iyz="-0.0075" izz="0.00751"/>
+            </inertial>
+            <visual name="${name}_visual">
+                <geometry>
+                    <mesh filename="package://hermes_description/meshes/dae/Cone.025.dae" scale="0.06000 0.06000 0.01500"/>
+                </geometry>
+                <material name="spoke_color"/>
+            </visual>
+            <collision name="${name}_collision">
+                <geometry>
+                    <mesh filename="package://hermes_description/meshes/dae/Cone.025.dae" scale="0.06000 0.06000 0.01500"/>
+                </geometry>
+            </collision>
+        </link>
+        <joint name="${name}_joint" type="fixed">
+            <parent link="${parent_link}"/>
+            <child link="${name}_link"/>
+            <origin rpy="${rpy}" xyz="0 0 0"/>
+        </joint>
+    </xacro:macro>
+
+    <material name="spoke_color">
+        <color rgba="0.08627 0.09412 0.11373 1.00000"/>
+    </material>
+</robot>

@@ -1,0 +1,302 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="arm">
+    <xacro:macro name="create_arm" params="name parent_link">
+    
+        <!-- Arm Base Link -->
+        <link name="${name}_base_link">
+            <collision name="${name}_base_collision">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <cylinder radius="0.35" length="0.1"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <mass value="1.0"/>
+                <origin rpy="0 0 0" xyz="0 0 0.025"/>
+                <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+            </inertial>
+            <visual name="${name}_base_visual">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <cylinder radius="0.35" length="0.1"/>
+                </geometry>
+                <material name="link_color"/>
+            </visual>
+        </link>
+
+        <!-- Arm Base Joint -->
+        <joint name="${name}_base_link_joint" type="fixed">
+            <origin rpy="0 0 0" xyz="0 0 0.05"/>
+            <parent link="${parent_link}"/>
+            <child link="${name}_base_link"/>
+        </joint>
+
+        <!-- Link 1 -->
+        <link name="${name}_link1">
+            <collision name="${name}_link1_collision">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <cylinder radius="0.1" length="0.5"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <inertia ixx="0.0175" ixy="0" ixz="0" iyy="0.0175" iyz="0" izz="0.015"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <mass value="3"/>
+            </inertial>
+            <visual name="${name}_link1_visual">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <cylinder radius="0.1" length="0.7"/>
+                </geometry>
+                <material name="link_color"/>
+            </visual>
+        </link>
+
+        <joint name="${name}_link1_joint" type="fixed">
+            <origin rpy="0 0 0" xyz="0 0 0.40"/>
+            <parent link="${name}_base_link"/>
+            <child link="${name}_link1"/>
+        </joint>
+
+        <!-- Joint 1 -->
+        <link name="${name}_joint1_link">
+            <collision name="${name}_joint1_collision">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <sphere radius="0.1"/>
+                </geometry>
+            </collision>
+            <inertial>
+            <inertia ixx="0.008" ixy="0" ixz="0" iyy="0.008" iyz="0" izz="0.008"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="0.2"/>
+            </inertial>
+            <visual name="${name}_joint1_visual">
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <sphere radius="0.1"/>
+            </geometry>
+            <material name="joint_color"/>
+            </visual>
+        </link>
+
+        <joint name="${name}_joint1_link_joint" type="revolute">
+            <limit lower="-3.14" upper="3.14" effort="1000" velocity="100"/>
+            <origin rpy="0 0 0" xyz="0 0 0.35"/>
+            <parent link="${name}_link1"/>
+            <child link="${name}_joint1_link"/>
+            <axis xyz="0 0 1"/>
+        </joint>
+
+        <!-- Link 2 -->
+        <link name="${name}_link2">
+            <collision name="${name}_link2_collision">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <cylinder radius="0.1" length="1.30"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <inertia ixx="1.72" ixy="0" ixz="0" iyy="0.06" iyz="0" izz="1.72"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <mass value="12"/>
+            </inertial>
+            <visual name="${name}_link2_visual">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <cylinder radius="0.1" length="1.30"/>
+                </geometry>
+                <material name="link_color"/>
+            </visual>
+        </link>
+
+        <joint name="${name}_link2_joint" type="fixed">
+            <origin rpy="1.57080 0 0" xyz="0 0.65 0"/>
+            <parent link="${name}_joint1_link"/>
+            <child link="${name}_link2"/>
+        </joint>
+
+        <!-- Joint 2 -->
+        <link name="${name}_joint2_link">
+            <collision name="${name}_joint2_collision">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <sphere radius="0.10000"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <inertia ixx="0.008" ixy="0" ixz="0" iyy="0.008" iyz="0" izz="0.008"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <mass value="0.2"/>
+            </inertial>
+            <visual name="${name}_joint2_visual">
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <sphere radius="0.1"/>
+            </geometry>
+            <material name="joint_color"/>
+            </visual>
+        </link>
+
+        <joint name="${name}_joint2_joint" type="fixed">
+            <origin rpy="0 0 0" xyz="0 0 -0.65"/>
+            <parent link="${name}_link2"/>
+            <child link="${name}_joint2_link"/>
+        </joint>
+
+        <!-- link 3 -->
+        <link name="${name}_link3_link">
+            <inertial>
+                <inertia ixx="0.0175" ixy="0" ixz="0" iyy="0.0175" iyz="0" izz="0.015"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <mass value="3"/>
+            </inertial>
+            <collision name="${name}_link3_collision">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <cylinder radius="0.1" length="0.2"/>
+                </geometry>
+            </collision>
+            <visual name="${name}_link3_visual">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <material name="link_color"/>
+                <geometry>
+                    <cylinder radius="0.1" length="0.2"/>
+                </geometry>
+            </visual>
+        </link>
+
+        <joint name="${name}_link3_joint" type="fixed">
+            <origin rpy="1.5708 0 0" xyz="0  0.1 0"/>
+            <parent link="${name}_joint2_link"/>
+            <child link="${name}_link3_link"/>
+        </joint>
+
+        <!-- joint 3 -->
+        <link name="${name}_joint3_link">
+            <inertial>
+                <inertia ixx="0.008" ixy="0" ixz="0" iyy="0.008" iyz="0" izz="0.008"/>
+                <origin rpy="0 0 0" xyz="0 -0 -0"/>
+                <mass value="2"/>
+            </inertial>
+            <visual name="${name}_joint3_visual">
+                <origin rpy="-0 0 0" xyz="0 -0 -0"/>
+                <material name="joint_color"/>
+                <geometry>
+                    <sphere radius="0.1"/>
+                </geometry>
+            </visual>
+            <collision name="${name}_joint3_collision">
+                <origin rpy="0 0 0" xyz="0 -0 -0"/>
+                <geometry>
+                    <sphere radius="0.1"/>
+                </geometry>
+            </collision>
+        </link>
+
+         <joint name="${name}_joint3_joint" type="revolute">
+            <limit lower="-2" upper="2" effort="1000" velocity="100"/>
+            <origin rpy="0 0 0" xyz="0 0 -0.1"/>
+            <parent link="${name}_link3_link"/>
+            <child link="${name}_joint3_link"/>
+            <axis xyz="0 0 1"/>
+        </joint>
+        
+        <!-- link 4 -->
+        <link name="${name}_link4_link">
+            <collision name="${name}_link4_collision">
+                <origin rpy="-0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <cylinder radius="0.1" length="1.1"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <inertia ixx="0.25833" ixy="0" ixz="0" iyy="0.01250" iyz="-0" izz="0.25833"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <mass value="2.5"/>
+            </inertial>
+            <visual name="${name}_link4_visual">
+                <origin rpy="-0 0 0" xyz="0 -0 -0"/>
+                <material name="link_color"/>
+                <geometry>
+                    <cylinder radius="0.1" length="1.1"/>
+                </geometry>
+            </visual>
+        </link>
+        <joint name="${name}_link4_joint" type="fixed">
+            <origin rpy="1.5708 0 0" xyz="0 -0.55 0"/>
+            <parent link="${name}_joint3_link"/>
+            <child link="${name}_link4_link"/>
+        </joint>
+
+        <!-- joint 4 -->
+        <link name="${name}_joint4_link">
+            <collision name="${name}_joint4_collision">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <cylinder radius="0.125" length="0.4"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <inertia ixx="0.01724" ixy="0" ixz="0" iyy="0.01724" iyz="0" izz="0.00781"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <mass value="1"/>
+            </inertial>
+            <visual name="${name}_joint4_visual">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <material name="joint_color"/>
+                <geometry>
+                    <cylinder radius="0.125" length="0.4"/>
+                </geometry>
+            </visual>
+        </link>
+        <joint name="${name}_joint4_joint" type="fixed">
+            <origin rpy="-1.5708 0 0" xyz="0 0 0.55"/>
+            <parent link="${name}_link4_link"/>
+            <child link="${name}_joint4_link"/>
+        </joint>
+    <!-- link 5 -->
+    <link name="${name}_link5_link">
+        <collision name="${name}_link5_collision">
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.075" length="2.2"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <inertia ixx="0.80948" ixy="0" ixz="0" iyy="0.80948" iyz="0" izz="0.00563"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="2"/>
+        </inertial>
+        <visual name="${name}_link5_visual">
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <material name="blue_metal"/>
+            <geometry>
+                <cylinder radius="0.075" length="2.2"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="${name}_link5_joint" type="prismatic">
+        <limit lower="0" upper="2" effort="1000" velocity="100"/>
+        <origin rpy="0 0 0" xyz="0 0 -0.79952"/>
+        <parent link="${name}_joint4_link"/>
+        <child link="${name}_link5_link"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+    <!-- Gripper -->
+    <xacro:include filename="$(find hermes_description)/urdf/arm/gripper.urdf.xacro"/>
+    <xacro:create_gripper name="gripper" parent_link="${name}_link5_link"/>
+
+    </xacro:macro>
+
+    <!-- Material -->
+    <material name="link_color">
+        <color rgba="0.09412 0.10980 0.21961 1"/>
+    </material>
+
+    <material name="joint_color">
+        <color rgba="0.04706 0.05490 0.07059 1"/>
+    </material>
+</robot>

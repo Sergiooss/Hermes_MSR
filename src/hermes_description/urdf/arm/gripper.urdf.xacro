@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="gripper">
+
+    <!-- Macro to create arm_base link and joint -->
+    <xacro:macro name="create_gripper" params="name parent_link">
+
+        <!-- Gripper Link -->
+        <link name="${name}_base_link">
+            <collision name="${name}_base_collision">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <box size="1 0.2 0.05"/>
+                </geometry>
+            </collision>
+            <inertial>
+                 <inertia ixx="0.00354" ixy="0" ixz="0" iyy="0.04104" iyz="0" izz="0.04417"/>
+                <origin rpy="0 0 0" xyz="0 0 -0"/>
+                <mass value="1"/>
+            </inertial>
+            <visual name="${name}_base_visual">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <box size="1 0.2 0.05"/>
+                </geometry>
+                <material name="blue_metal"/>
+            </visual>
+        </link>
+
+        <!-- Gripper Joint -->
+        <joint name="${name}_base_joint" type="revolute">
+            <limit lower="-3.14" upper="3.14" effort="1000" velocity="100"/>
+            <origin rpy="3.14159 0 0" xyz="0 0 1.08412"/>
+            <parent link="${parent_link}"/>
+            <child link="${name}_base_link"/>
+            <axis xyz="0 0 1"/>
+        </joint>
+
+        <!-- Finger Left -->
+        <link name="${name}_finger_left_link">
+            <collision name="${name}_finger_left_collision">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <mesh filename="file://$(find hermes_description)/meshes/dae/Cube.003.dae" scale="0.05000 0.10000 0.15000"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <inertia ixx="0.0234" ixy="0.0002" ixz="-0.0021" iyy="0.01715" iyz="0" izz="0.00815"/>
+                <origin rpy="0 0 0" xyz="-0.01667 0 0.05000"/>
+                <mass value="2"/>
+            </inertial>
+            <visual name="${name}_finger_left_visual">
+                <origin rpy="-0 0 0" xyz="0 0 -0"/>
+                <material name="gripper_color"/>
+                <geometry>
+                    <mesh filename="file://$(find hermes_description)/meshes/dae/Cube.003.dae" scale="0.05000 0.10000 0.15000"/>
+                </geometry>
+            </visual>
+        </link>
+
+        <!-- Finger Left Joint -->
+        <joint name="${name}_finger_left_joint" type="prismatic">
+            <limit lower="0" upper="0.20000" effort="1000" velocity="100"/>
+            <origin rpy="0 0 0" xyz="0.45000 0 -0.17500"/>
+            <parent link="${name}_base_link"/>
+            <child link="${name}_finger_left_link"/>
+            <axis xyz="-1 0 0"/>
+        </joint>
+
+        <!-- Finger Right -->
+        <link name="${name}_finger_right_link">
+            <collision name="${name}_finger_right_collision">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <mesh filename="file://$(find hermes_description)/meshes/dae/Cube.001.dae" scale="0.05000 0.10000 0.15000"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <inertia ixx="0.02340" ixy="0.00020" ixz="0.00210" iyy="0.01715" iyz="0" izz="0.00815"/>
+                <origin rpy="0 0 0" xyz="0.01667 0 0.05000"/>
+                <mass value="2"/>
+            </inertial>
+            <visual name="${name}_finger_right_visual">
+                <origin rpy="-0 0 0" xyz="0 0 -0"/>
+                <material name="gripper_color"/>
+                <geometry>
+                    <mesh filename="file://$(find hermes_description)/meshes/dae/Cube.001.dae" scale="0.05000 0.10000 0.15000"/>
+                </geometry>
+            </visual>
+        </link>
+
+        <!-- Finger Right Joint -->
+        <joint name="${name}_finger_right_joint" type="prismatic">
+            <limit lower="0" upper="0.20000" effort="1000" velocity="100"/>
+            <origin rpy="0 0 0" xyz="-0.45000 0 -0.17500"/>
+            <parent link="${name}_base_link"/>
+            <child link="${name}_finger_right_link"/>
+            <axis xyz="1 0 0"/>
+        </joint>
+
+        <!-- Create Camera -->
+        <!-- Camera Joint -->
+        <joint name="${name}_camera_mount_joint" type="fixed">
+            <origin xyz="0 0 -0.02" rpy="-1.5708 1.5708 0"/>
+            <parent link="${name}_base_link"/>
+            <child link="${name}_camera_mount_link"/>
+        </joint>
+
+        <!-- Camera Link -->
+        <link name="${name}_camera_mount_link">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <box size="0.05 0.05 0.05"/>
+                </geometry>
+                <material name="gripper_camera_color"/>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <box size="0.05 0.05 0.05"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <mass value="0.1"/>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <inertia ixx="0.0001" iyy="0.0001" izz="0.0001"
+                        ixy="0" ixz="0" iyz="0"/>
+            </inertial>
+        </link>
+
+        <!-- Cámara frontal (sensor) usando el macro sensor_camera -->
+        <xacro:include filename="$(find hermes_description)/urdf/sensors/camera.urdf.xacro"/>
+
+        <xacro:sensor_camera_generic name="${name}_camera" parent="${name}_camera_mount_link"/>
+
+        <!-- Material -->
+        <material name="gripper_camera_color">
+            <color rgba="0.09412 0.1098 0.21961 1"/>
+        </material>
+        <material name="gripper_color">
+            <color rgba="0.04706 0.05490 0.07059 1.0"/>
+        </material>
+    </xacro:macro>
+</robot>

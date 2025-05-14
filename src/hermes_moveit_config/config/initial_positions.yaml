@@ -1,0 +1,9 @@
+# Default initial positions for hermes's ros2_control fake system
+
+initial_positions:
+  arm_joint1_link_joint: 0
+  arm_joint3_joint: 0
+  arm_link5_joint: 0
+  gripper_base_joint: 0
+  gripper_finger_left_joint: 0
+  gripper_finger_right_joint: 0

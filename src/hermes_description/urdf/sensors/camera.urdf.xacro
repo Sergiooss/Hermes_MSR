@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<robot name="camera" xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <!-- ####### CAMERA ####### -->
+  <xacro:macro name="sensor_camera_generic" params="name parent node_name:=camera horizontal_fov:=60 vertical_fov:=80 video_width:=1280 video_height:=720 video_fps:=30">
+
+    <xacro:property name="node_namespace" value="${node_name}"/>
+
+    <!-- Camera -->
+    <joint name="${name}_joint" type="fixed">
+      <origin xyz="0.0 0.0 0.06" rpy="0.0 0.0 0.0"/>
+      <parent link="${parent}"/>
+      <child link="${name}_frame"/>
+    </joint>
+
+    <link name="${name}_frame"/>
+
+    <joint name="${name}_color_optical_joint" type="fixed">
+      <origin xyz="0.0 0.0 0.0" rpy="-${pi/2} 0.0 -${pi/2}"/>
+      <parent link="${name}_frame"/>
+      <child link="${name}_optical_frame"/>
+    </joint>
+
+    <link name="${name}_optical_frame"/>
+
+    <gazebo reference="${name}_frame">
+      <sensor name="${name}_sensor" type="camera">
+        <visualize>true</visualize>
+        <update_rate>30</update_rate>
+        <topic>${name}/image</topic>
+        <camera>
+          <horizontal_fov>${radians(float(horizontal_fov))}</horizontal_fov>
+          <image>
+            <width>${video_width}</width>
+            <height>${video_height}</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.10</near>
+            <far>15.0</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+          <optical_frame_id>${name}_frame</optical_frame_id>
+        </camera>
+      </sensor>
+    </gazebo>
+  </xacro:macro>
+</robot>

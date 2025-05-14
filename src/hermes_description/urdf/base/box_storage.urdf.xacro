@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="column" params="name origin_xyz">
+    
+        <link name="${name}_link">
+            <collision name="${name}_collision">
+            <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+            <geometry>
+                <cylinder radius="0.05000" length="0.50000"/>
+            </geometry>
+            </collision>
+            <inertial>
+            <inertia ixx="0.04292" ixy="0.00000" ixz="0.00000" iyy="0.04292" iyz="0.00000" izz="0.00250"/>
+            <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+            <mass value="2.00000"/>
+            </inertial>
+            <visual name="${name}_visual">
+            <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+            <material name="box_pilar"/>
+            <geometry>
+                <cylinder radius="0.05000" length="0.50000"/>
+            </geometry>
+            </visual>
+        </link>
+        <joint name="${name}_joint" type="fixed">
+            <origin rpy="0 0 0" xyz="${origin_xyz}"/>
+            <parent link="mid_platform_link"/>
+            <child link="${name}_link"/>
+        </joint>
+    </xacro:macro>
+
+    <xacro:macro name="wall" params="name parent_name size origin_xyz rpy">
+        <link name="${name}_link">
+            <collision name="${name}_collision">
+                <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+                <geometry>
+                    <box size="${size}"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <inertia ixx="0.01667" ixy="0.00000" ixz="0.00000" iyy="1.21667" iyz="0.00000" izz="1.20667"/>
+                <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+                <mass value="4.00000"/>
+            </inertial>
+            <visual name="${name}_visual">
+                <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+                <material name="gray_wall"/>
+                <geometry>
+                    <box size="${size}"/>
+                </geometry>
+            </visual>
+        </link>
+        <joint name="${name}_joint" type="fixed">
+            <origin xyz="${origin_xyz}" rpy="${rpy}"/>
+            <parent link="${parent_name}"/>
+            <child link="${name}_link"/>
+        </joint>
+    </xacro:macro>
+
+    <!-- Material Definitions -->
+    <material name="box_pilar">
+        <color rgba="0.23137 0.26275 0.31765 1.00000"/>
+    </material>
+    
+    <material name="gray_wall">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+    </material>
+</robot>

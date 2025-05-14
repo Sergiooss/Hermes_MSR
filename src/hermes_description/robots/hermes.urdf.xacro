@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="hermes">
+    <!-- Include the base robot xacro -->
+    <xacro:include filename="$(find hermes_description)/urdf/base/robot_base.urdf.xacro"/>
+    <xacro:include filename="$(find hermes_description)/urdf/cushioning/cushioning.urdf.xacro"/>
+    <xacro:include filename="$(find hermes_description)/urdf/radio/axel2axel.urdf.xacro"/>
+    <xacro:include filename="$(find hermes_description)/urdf/radio/radio.urdf.xacro"/>
+    <xacro:include filename="$(find hermes_description)/urdf/wheel/wheel.urdf.xacro"/>
+    <xacro:include filename="$(find hermes_description)/urdf/arm/arm.urdf.xacro"/>
+
+    <!-- Call the macro defined in the included xacro -->
+    <xacro:robot_base/>
+
+    <!-- Add cushioning -->
+    <xacro:cushioning name="cushioning_b_l" origin_xyz="0.4 -1 -0.075"/>
+    <xacro:cushioning name="cushioning_b_r" origin_xyz="-0.4 -1 -0.075"/>
+    <xacro:cushioning name="cushioning_c_l" origin_xyz="0.4 0 -0.075"/>
+    <xacro:cushioning name="cushioning_c_r" origin_xyz="-0.4 0 -0.075"/>
+    <xacro:cushioning name="cushioning_f_l" origin_xyz="0.4 1 -0.075"/>
+    <xacro:cushioning name="cushioning_f_r" origin_xyz="-0.4 1 -0.075"/>
+
+    <!-- Cushioning joints -->
+    <xacro:axle2axle name="cushioning2radio2_b_l" parent="cushioning_b_l_link" xyz="0 0 -0.12500" rpy="0 0 0"/>
+    <xacro:axle2axle name="cushioning2radio2_b_r" parent="cushioning_b_r_link" xyz="0 0 -0.12500" rpy="0 0 0"/>
+    <xacro:axle2axle name="cushioning2radio2_c_l" parent="cushioning_c_l_link" xyz="0 0 -0.12500" rpy="0 0 0"/>
+    <xacro:axle2axle name="cushioning2radio2_c_r" parent="cushioning_c_r_link" xyz="0 0 -0.12500" rpy="0 0 0"/>
+    <xacro:axle2axle name="cushioning2radio2_f_l" parent="cushioning_f_l_link" xyz="0 0 -0.12500" rpy="0 0 0"/>
+    <xacro:axle2axle name="cushioning2radio2_f_r" parent="cushioning_f_r_link" xyz="0 0 -0.12500" rpy="0 0 0"/>
+
+    <!-- radio2 -->
+    <xacro:radio2 name="radio2_b_l" parent_link="cushioning2radio2_b_l_link" xyz="0.17000 0 -0.16000" rpy="0 -0.78540 0"/>
+    <xacro:radio2 name="radio2_b_r" parent_link="cushioning2radio2_b_r_link" xyz="-0.17000 0 -0.16000" rpy="0 0.78540 0"/>
+    <xacro:radio2 name="radio2_c_l" parent_link="cushioning2radio2_c_l_link" xyz="0.17000 0 -0.16000" rpy="0 -0.78540 0"/>
+    <xacro:radio2 name="radio2_c_r" parent_link="cushioning2radio2_c_r_link" xyz="-0.17000 0 -0.16000" rpy="0 0.78540 0"/>
+    <xacro:radio2 name="radio2_f_l" parent_link="cushioning2radio2_f_l_link" xyz="0.17000 0 -0.16000" rpy="0 -0.78540 0"/>
+    <xacro:radio2 name="radio2_f_r" parent_link="cushioning2radio2_f_r_link" xyz="-0.17000 0 -0.16000" rpy="-3.14159 0.78540 -0"/>
+
+    <!-- Axle to axle joints -->
+    <xacro:axle2axle name="radio1_to_radio2_b_l" parent="radio2_b_l_link" xyz="0.00354 0 -0.24395" rpy="0 0.78540 0"/>
+    <xacro:axle2axle name="radio1_to_radio2_b_r" parent="radio2_b_r_link" xyz="-0.00354 0 -0.24395" rpy="0 -0.78540 0"/>
+    <xacro:axle2axle name="radio1_to_radio2_c_l" parent="radio2_c_l_link" xyz="0.00354 0 -0.24395" rpy="0 0.78540 0"/>
+    <xacro:axle2axle name="radio1_to_radio2_c_r" parent="radio2_c_r_link" xyz="-0.00354 0 -0.24395" rpy="0 -0.78540 0"/>
+    <xacro:axle2axle name="radio1_to_radio2_f_l" parent="radio2_f_l_link" xyz="0.00354 0 -0.24395" rpy="0 0.78540 0"/>
+    <xacro:axle2axle name="radio1_to_radio2_f_r" parent="radio2_f_r_link" xyz="-0.00354 0 0.24395" rpy="3.14159 0.78540 -0"/>
+
+    <!-- radio1 -->
+    <xacro:radio1 name="radio1_b_l" parent_link="radio1_to_radio2_b_l_link" xyz="0.11500 0 -0"/>
+    <xacro:radio1 name="radio1_b_r" parent_link="radio1_to_radio2_b_r_link" xyz="-0.11500 0 0"/>
+    <xacro:radio1 name="radio1_c_l" parent_link="radio1_to_radio2_c_l_link" xyz="0.11500 0 -0"/>
+    <xacro:radio1 name="radio1_c_r" parent_link="radio1_to_radio2_c_r_link" xyz="-0.11500 0 0"/>
+    <xacro:radio1 name="radio1_f_l" parent_link="radio1_to_radio2_f_l_link" xyz="0.11500 0 -0"/>
+    <xacro:radio1 name="radio1_f_r" parent_link="radio1_to_radio2_f_r_link" xyz="-0.11500 0 -0"/>
+
+    
+    <!-- Wheels -->
+    <xacro:create_wheel name="wheel_b_l" parent_link="radio1_b_l_link" xyz="0 0 0.12591" rpy="0 0 0"/>
+    <xacro:create_wheel name="wheel_b_r" parent_link="radio1_b_r_link" xyz="0 0 -0.12591" rpy="0 3.14159 0"/>
+    <xacro:create_wheel name="wheel_c_l" parent_link="radio1_c_l_link" xyz="0 0 0.12591" rpy="0 0 0"/>
+    <xacro:create_wheel name="wheel_c_r" parent_link="radio1_c_r_link" xyz="0 0 -0.12591" rpy="0 3.14159 0"/>
+    <xacro:create_wheel name="wheel_f_l" parent_link="radio1_f_l_link" xyz="0 0 0.12591" rpy="0 0 0"/>
+    <xacro:create_wheel name="wheel_f_r" parent_link="radio1_f_r_link" xyz="0 0 -0.12591" rpy="0 3.14159 0"/>
+
+    <!-- Create arm -->
+    <xacro:create_arm name="arm" parent_link="up_platform_link"/>
+
+
+
+</robot>

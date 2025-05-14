@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="cushioning" params="name origin_xyz">
+
+        <link name="${name}_link">
+            <collision name="${name}_collision">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <cylinder radius="0.025" length="0.25"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <inertia ixx="0.04292" ixy="0" ixz="0" iyy="0.04292" iyz="0" izz="0.0025"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <mass value="8"/>
+            </inertial>
+            <visual name="${name}_visual">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <material name="blue_metal"/>
+                <geometry>
+                    <cylinder radius="0.025" length="0.25"/>
+                </geometry>
+            </visual>
+        </link>
+        <joint name="${name}_joint" type="fixed">
+            <origin rpy="0 0 0" xyz="${origin_xyz}"/>
+            <parent link="low_platform_link"/>
+            <child link="${name}_link"/>
+        </joint>
+    </xacro:macro>
+    
+    <!-- Materials -->
+    <material name="cushioning_color">
+        <color rgba="0.09412 0.1098 0.21961 1"/>
+    </material>
+</robot>
+

@@ -1,0 +1,253 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Define a single macro to encapsulate the entire robot -->
+    <xacro:macro name="robot_base">
+        <!-- Links and Joints -->
+        <link name="base_footprint">
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+        </link>
+
+        <joint name="base_footprint_joint" type="fixed">
+            <origin rpy="0 0 -1.5708" xyz="0 0 1.105"/>
+            <parent link="base_footprint"/>
+            <child link="base_link"/>
+        </joint>
+
+        <link name="base_link">
+            <collision>
+                <geometry>
+                    <mesh filename="file://$(find hermes_description)/meshes/dae/Cube.dae" scale="1.1 1.65 0.2"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <mass value="700.0"/>
+                <origin rpy="0 0 0" xyz="0 0 -0.00628"/>
+                <inertia ixx="590.84569" ixy="0" ixz="0" iyy="267.78636" iyz="0" izz="839.95433"/>
+            </inertial>
+            <visual>
+            <geometry>
+                <mesh filename="file://$(find hermes_description)/meshes/dae/Cube.dae" scale="1.1 1.65 0.2"/>
+            </geometry>
+            <material name="chasis"/>
+            </visual>
+        </link>
+
+        <joint name="AA_up_base_link_joint" type="fixed">
+            <origin rpy="0 0 0" xyz="0 0.75 0.5"/>
+            <parent link="base_link"/>
+            <child link="AA_up_base_link"/>
+        </joint>
+
+        <link name="AA_up_base_link">
+            <collision name="up_base_collision">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <mesh filename="file://$(find hermes_description)/meshes/dae/Cube.007.dae" scale="1.0 0.75 0.3"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <inertia ixx="31.08214" ixy="0" ixz="0" iyy="50.45714" iyz="0" izz="69.19643"/>
+                <origin rpy="0 0 0" xyz="0 0 -0.06429"/>
+                <mass value="200.0"/>
+            </inertial>
+            <visual name="up_base">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <material name="chasis"/>
+                <geometry>
+                    <mesh filename="file://$(find hermes_description)/meshes/dae/Cube.007.dae" scale="1.0 0.75 0.3"/>
+                </geometry>
+            </visual>
+        </link>
+
+        <joint name="up_platform_link_joint" type="fixed">
+            <origin rpy="0 0 0" xyz="0 0 0.3"/>
+            <parent link="AA_up_base_link"/>
+            <child link="up_platform_link"/>
+        </joint>
+
+        <link name="up_platform_link">
+            <inertial>
+                <inertia ixx="0.02344" ixy="0" ixz="0" iyy="0.04167" iyz="0" izz="0.06510"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <mass value="0.5"/>
+            </inertial>
+            <visual name="up_platform">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <material name="up_platform_color"/>
+                <geometry>
+                    <box size="1.0 0.75 0.01"/>
+                </geometry>
+            </visual>
+            <collision name="up_platform_collision">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <box size="1.0 0.75 0.01"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <joint name="back_tire_joint" type="fixed">
+            <origin rpy="-3.14159 1.21824 -1.5708" xyz="0 -1.59 -0.05"/>
+            <parent link="base_link"/>
+            <child link="back_tire_link"/>
+        </joint>
+
+        <link name="back_tire_link">
+            <collision name="back_tire_collision">
+                <origin rpy="0 0 0" xyz="0 0 -0.115"/>
+                <geometry>
+                    <mesh filename="file://$(find hermes_description)/meshes/dae/Cone.019.dae" scale="0.06 0.06 0.015"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <inertia ixx="0.36033" ixy="0" ixz="0" iyy="0.62279" iyz="0" izz="0.39586"/>
+                <origin rpy="0 0 0" xyz="0 0 -0.115"/>
+                <mass value="10.0"/>
+            </inertial>
+            <visual name="back_tire">
+                <origin rpy="0 0 0" xyz="0 0 -0.115"/>
+                <material name="tire_color"/>
+                <geometry>
+                    <mesh filename="file://$(find hermes_description)/meshes/dae/Cone.019.dae" scale="0.06 0.06 0.015"/>
+                </geometry>
+            </visual>
+        </link>
+
+        <joint name="low_platform_link_joint" type="fixed">
+            <origin rpy="0 0 0" xyz="0 0 -0.2"/>
+            <parent link="base_link"/>
+            <child link="low_platform_link"/>
+        </joint>
+
+        <link name="low_platform_link">
+            <collision name="low_platform_collision">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <box size="2.2 3.3 0.001"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <inertia ixx="0.45375" ixy="0" ixz="0" iyy="0.20167" iyz="0" izz="0.65542"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <mass value="0.5"/>
+            </inertial>
+            <visual name="low_platform">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <material name="blue_metal"/>
+                <geometry>
+                    <box size="2.2 3.3 0.001"/>
+                </geometry>
+            </visual>
+        </link>
+        
+        <joint name="mid_platform_link_joint" type="fixed">
+            <origin rpy="0 0 0" xyz="0 -0.75 0.2"/>
+            <parent link="base_link"/>
+            <child link="mid_platform_link"/>
+        </joint>
+
+        <link name="mid_platform_link">
+            <collision name="mid_platform_collision">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <box size="2 1.5 0.01"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <inertia ixx="0.45375" ixy="0" ixz="0" iyy="0.20167" iyz="0" izz="0.65542"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <mass value="0.5"/>
+            </inertial>
+            <visual name="mid_platform">
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <material name="blue_metal"/>
+                <geometry>
+                    <box size="2 1.5 0.01"/>
+                </geometry>
+            </visual>
+        </link>
+
+        <!-- Link para la cámara -->
+        <joint name="front_camera_mount_joint" type="fixed">
+            <origin xyz="0 1.4 0.4" rpy="0 0 1.5708"/>
+            <parent link="base_link"/>
+            <child link="front_camera_mount_link"/>
+        </joint>
+
+        <link name="front_camera_mount_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+            <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <material name="blue_metal"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+            <box size="0.05 0.05 0.05"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.1"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <inertia ixx="0.0001" iyy="0.0001" izz="0.0001"
+                    ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        </link>
+        
+        <!-- Cámara frontal (sensor) -->
+        <xacro:include filename="$(find hermes_description)/urdf/sensors/camera.urdf.xacro"/>
+        <xacro:sensor_camera_generic name="front_camera" parent="front_camera_mount_link"/>
+        
+        <!-- Link para el IMU -->
+            <joint name="imu_joint" type="fixed">
+                <origin xyz="0 0 0" rpy="0 0 1.5708"/>
+                <parent link="base_link"/>
+                <child link="imu_link"/>
+            </joint>
+
+            <link name="imu_link"/>
+            <xacro:include filename="$(find hermes_description)/urdf/sensors/imu.urdf.xacro"/>
+            <xacro:sensor_imu_generic name="imu" reference="imu_link"/>
+        <!-- IMU (sensor) -->
+
+        <!-- box storage -->
+        <!-- Include the storage xacros -->
+        <xacro:include filename="$(find hermes_description)/urdf/base/box_storage.urdf.xacro"/>
+        <!-- Instantiate the single column macro for each column -->
+        <xacro:column name="box_col_limit_b_l" origin_xyz="0.95 -0.7 0.20"/>
+        <xacro:column name="box_col_limit_b_r" origin_xyz="-0.95 -0.7 0.20"/>
+        <xacro:column name="box_col_limit_f_l" origin_xyz="0.95 0.7 0.20"/>
+        <xacro:column name="box_col_limit_f_r" origin_xyz="-0.95 0.7 0.20"/>
+
+        <!-- Instantiate the single wall macro for each wall -->
+        <xacro:wall name="wall_back" parent_name="box_col_limit_b_l_link" size="1.9 0.1 0.1" rpy="0 0 0" origin_xyz="-0.95 0 0"/>
+        <xacro:wall name="wall_front" parent_name="box_col_limit_f_r_link" size="1.9 0.1 0.1" rpy="0 0 0" origin_xyz="0.95 0 0"/>
+        <xacro:wall name="wall_left" parent_name="box_col_limit_f_l_link" size="1.45 0.1 0.1" rpy="0 0 1.57080" origin_xyz="0 -0.725 0"/>
+        <xacro:wall name="wall_right" parent_name="box_col_limit_b_r_link" size="1.45 0.1 0.1" rpy="0 0 1.57080" origin_xyz="0 0.725 0"/>
+
+        <!-- Gazebo ROS control plugins -->
+        <xacro:include filename="$(find hermes_description)/urdf/ros2_control.urdf.xacro"/>
+        <xacro:arg name="config_controllers" default="$(find hermes_description)/config/hermes_controllers.yaml"/>
+        <xacro:arg name="update_rate" default="20"/>
+        <xacro:ros2_control/>
+
+    </xacro:macro>
+
+    <!-- Materials -->
+    <material name="chasis">
+        <color rgba="0.09412 0.07059 0.24314 1.0"/>
+    </material>
+    <material name="up_platform_color">
+        <color rgba="0.04706 0.05490 0.07059 1.0"/>
+    </material>
+    <material name="blue_metal">
+        <color rgba="0.01961 0.02353 0.04706 1.0"/>
+    </material>
+    <material name="tire_color">
+        <color rgba="0.00392 0.00392 0.00392 1.0"/>
+    </material>
+
+</robot>
