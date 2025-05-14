@@ -1,7 +1,5 @@
 # Hermes\_MSR
 
-![Video demostración del robot Hermes cogiendo un cubo](https://drive.google.com/file/d/164FAdJ3IyVZkYIRyUjzqT3uezJm92M24/view?usp=sharing)
-
 ## Descripción general
 
 Esta práctica consiste en la integración y simulación de un robot tipo SCARA móvil, llamado **Hermes**, en un entorno simulado con ROS 2 y Gazebo, incluyendo sensores, teleoperación, MoveIt y controladores. Parte de un modelo previo del robot creado con Blender.
@@ -110,7 +108,7 @@ Gracias a este paquete movemos al robot y lo hacemos avanzar hasta los cubos.
 
 ---
 
-## 6. Video de demostración
+## 7. Video de demostración
 
 Puedes ver el comportamiento final del robot Hermes realizando una tarea de recogida de un cubo en el siguiente video:
 
@@ -118,7 +116,7 @@ Puedes ver el comportamiento final del robot Hermes realizando una tarea de reco
 
 ---
 
-## 7. Ejecución
+## 8. Ejecución
 
 ```bash
 # Lanzar simulación completa
