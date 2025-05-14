@@ -70,20 +70,20 @@ Posteriormente, se modificaron los archivos para permitir su uso en Gazebo y en 
 
 ## 4. Archivos de lanzamiento
 
-### 🚀 Launcher principal: `robot_gazebo.launch.launch.py`
+### Launcher principal: `robot_gazebo.launch.launch.py`
 
 Este launch lanza el entorno completo de simulación:
 
 * Gazebo con el mundo `urjc_excavation_world`
-* 🚗 Spawnea el robot Hermes desde el `robot_description`
-* 📊 RViz con el modelo ya cargado
-* 🎮 Bridges de ROS-Gazebo, incluyendo:
+* Spawnea el robot Hermes desde el `robot_description`
+* RViz con el modelo ya cargado
+* Bridges de ROS-Gazebo, incluyendo:
 
   * Topics de imagen para ambas cámaras (`ros_gz_image`)
   * Bridges definidos en `rover_bridge.yaml`
   * Nodo `twist_stamper` para transformar comandos de velocidad
 
-### 💡 Launcher de MoveIt: `move_group.launch.py`
+### Launcher de MoveIt: `move_group.launch.py`
 
 Este launcher inicia los nodos necesarios de planificación de MoveIt para Hermes:
 
@@ -92,7 +92,7 @@ Este launcher inicia los nodos necesarios de planificación de MoveIt para Herme
 
 Esto permite controlar el brazo y el gripper desde RViz o desde scripts de planificación.
 
-### 🛠️ Launcher de controladores: `robot_controllers.launch.py`
+### Launcher de controladores: `robot_controllers.launch.py`
 
 Carga todos los controladores ROS 2 necesarios para el robot:
 
