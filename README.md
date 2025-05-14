@@ -130,3 +130,6 @@ ros2 launch hermes_moveit_config moveit.launch.py
 ```
 
 ---
+## 9. Rosbag
+**[rosbag](https://drive.google.com/file/d/1Vp3dvcWr-POlC-IvOBRTmwIwjRYR0PAi/view?usp=sharing)**
+
