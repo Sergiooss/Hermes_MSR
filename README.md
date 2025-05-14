@@ -12,15 +12,35 @@ El objetivo ha sido simular y controlar un escenario de *pick and place* en un m
 
 ## 1. Estructura del robot
 
-El robot Hermes fue inicialmente diseñado en Blender, y desde ahí se generó un archivo URDF completo. Para mejorar su mantenibilidad y modularidad, se reorganizó todo el URDF dividiéndolo en distintos archivos `xacro` según las partes del robot:
+El robot **Hermes** fue inicialmente diseñado en Blender, y desde ahí se generó un archivo URDF completo. Para mejorar su mantenibilidad, modularidad y reutilización, el modelo se reestructuró utilizando archivos `xacro`, organizados jerárquicamente por componentes del robot. Esta modularización facilitó tanto la comprensión del modelo como su integración con **MoveIt** y **Gazebo**.
 
-* Base
-* Brazo
-* Gripper
-* Cámaras
-* IMU
+La estructura del directorio `urdf/` está dividida en las siguientes carpetas y archivos:
 
-Esto permitió una jerarquía de links y joints clara, y facilitó la posterior integración con MoveIt y Gazebo.
+- **arm/**
+  - `arm.urdf.xacro`: define el brazo principal del robot.
+  - `gripper.urdf.xacro`: define la pinza final del manipulador.
+  
+- **base/**
+  - `robot_base.urdf.xacro`: define la base central del robot.
+  - `box_storage.urdf.xacro`: estructura superior para carga.
+  
+- **cushioning/**
+  - `cushioning.urdf.xacro`: define el sistema de amortiguación.
+  
+- **radio/**
+  - `radio.urdf.xacro`: modelo del módulo de radio principal.
+  - `axel2axel.urdf.xacro`: define la estructura que une radios o ejes.
+
+- **sensors/**
+  - `camera.urdf.xacro`: incluye las cámaras montadas en el robot.
+  - `imu.urdf.xacro`: sensor IMU ubicado en el centro del robot.
+
+- **wheel/**
+  - `wheel.urdf.xacro`: define las ruedas principales del robot.
+  - `radio_wheel.urdf.xacro`: incluye los radios de las ruedas
+
+Esta organización facilita el mantenimiento y extensión del modelo, permitiendo modificar partes específicas (como sensores o ruedas) sin alterar el resto del URDF.
+
 
 ---
 
@@ -85,7 +105,12 @@ Todos estos controladores se configuran desde los archivos `.yaml` situados en l
 
 ---
 
-## 5. Video de demostración
+## 6. Teleop_twist_keyboard
+Gracias a este paquete movemos al robot y lo hacemos avanzar hasta los cubos.
+
+---
+
+## 6. Video de demostración
 
 Puedes ver el comportamiento final del robot Hermes realizando una tarea de recogida de un cubo en el siguiente video:
 
@@ -93,7 +118,7 @@ Puedes ver el comportamiento final del robot Hermes realizando una tarea de reco
 
 ---
 
-## 6. Ejecución
+## 7. Ejecución
 
 ```bash
 # Lanzar simulación completa
